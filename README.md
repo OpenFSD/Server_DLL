@@ -15,9 +15,9 @@
 - Version 17.10.5
 
 ## Dependencies
-### ServerLibrary Server Library Windows
-- WriteEnableWait
-- ConcurrentQueLauncher
+### Server Library .DLL
+- WriteEnableWait .DLL
+- ConcurrentQueLauncher .DLL
 
    
 ## Development History
