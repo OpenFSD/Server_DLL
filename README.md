@@ -1,4 +1,4 @@
-# ServerLibrary Static Server Library (Windows)
+# Dynamic Server Link Library
 
 
 ## Server, Buffer and Networking For Full Stack Development
