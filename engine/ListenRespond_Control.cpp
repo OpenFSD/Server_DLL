@@ -1,6 +1,6 @@
 #include "ListenRespond_Control.h"
 
-namespace ServerLibrary
+namespace Server_Library
 {
     bool ListenRespond_Control::flag_IO_ThreadState = false;
 

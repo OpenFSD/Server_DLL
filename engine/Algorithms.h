@@ -4,7 +4,7 @@
 #include "ListenRespond.h"
 #include "..\\user_praise_files\\User_Alg.h"
 
-namespace ServerLibrary
+namespace Server_Library
 {
     class Algorithms
     {

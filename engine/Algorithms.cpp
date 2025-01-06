@@ -1,7 +1,7 @@
 #include "Algorithms.h"
 #include <cstddef>
 
-namespace ServerLibrary
+namespace Server_Library
 {
     class Concurrent** Algorithms::ptr_Concurrent_Array = NULL;
     class Concurrent* Algorithms::ptr_Concurrent[3] = { NULL, NULL, NULL };//NUMBER OF CONCURRENT CORES
@@ -11,7 +11,7 @@ namespace ServerLibrary
 
     Algorithms::Algorithms()
     {
-        ptr_User_Algorithms = new class ServerLibrary::User_Alg();
+        ptr_User_Algorithms = new class Server_Library::User_Alg();
         while (ptr_User_Algorithms == NULL) { /* wait untill class constructed */ }
     }
 
@@ -39,7 +39,7 @@ namespace ServerLibrary
 
     void Algorithms::Initialise(unsigned char* ptr_NumberOfImplementedCores)
     {
-        ptr_New_Concurrent = new class ServerLibrary::Concurrent();
+        ptr_New_Concurrent = new class Server_Library::Concurrent();
         while(ptr_New_Concurrent == NULL) { /* wait untill created */ }
         ptr_New_Concurrent->Initialise_Control();
 

@@ -1,6 +1,6 @@
 #include "Data_Control.h"
 
-namespace ServerLibrary
+namespace Server_Library
 {
     bool Data_Control::flag_InputStackLoaded = false;
     bool Data_Control::flag_OutputStackLoaded = false;
@@ -15,33 +15,33 @@ namespace ServerLibrary
 
     }
 
-    void ServerLibrary::Data_Control::PopFromStackOfInputPraises(
-        class ServerLibrary::Input* referenceForCore,
-        std::vector<class ServerLibrary::Input*>* ptr_inputStack
+    void Server_Library::Data_Control::PopFromStackOfInputPraises(
+        class Server_Library::Input* referenceForCore,
+        std::vector<class Server_Library::Input*>* ptr_inputStack
     )
     {
 
     }
 
     void Data_Control::PopFromStackOfOutput(
-        class ServerLibrary::Output* distributeBuffer,
-        std::vector<class ServerLibrary::Output*>* ptr_outputStack
+        class Server_Library::Output* distributeBuffer,
+        std::vector<class Server_Library::Output*>* ptr_outputStack
     )
     {
 
     }
 
     void Data_Control::PushToStackOfInputPraises(
-        std::vector<class ServerLibrary::Input*>* ptr_InputStack,
-        class ServerLibrary::Input* ptr_Buffer_Praise
+        std::vector<class Server_Library::Input*>* ptr_InputStack,
+        class Server_Library::Input* ptr_Buffer_Praise
     )
     {
 
     }
 
     void Data_Control::PushToStackOfOutput(
-        std::vector<class ServerLibrary::Output*>* ptr_outputStack,
-        class ServerLibrary::Output* ptr_referenceForCore
+        std::vector<class Server_Library::Output*>* ptr_outputStack,
+        class Server_Library::Output* ptr_referenceForCore
     )
     {
 

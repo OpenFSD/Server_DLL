@@ -1,6 +1,6 @@
 #include "Concurrent_Control.h"
 
-namespace ServerLibrary
+namespace Server_Library
 {
 
 	Concurrent_Control::Concurrent_Control()
@@ -22,8 +22,8 @@ namespace ServerLibrary
 //===
 //===	
 		case 0:
-			ServerLibrary::Framework::Get_Server()->Get_Algorithms()->Get_Concurren_Array(int(concurrent_coreId))->Set_Algorithm_Subset(
-				reinterpret_cast<class Object*>(ServerLibrary::Framework::Get_Server()->Get_Algorithms()->Get_User_Algorithms()->Get_Praise0_Algorithm())
+			Server_Library::Framework_Server::Get_Server()->Get_Algorithms()->Get_Concurren_Array(int(concurrent_coreId))->Set_Algorithm_Subset(
+				reinterpret_cast<class Object*>(Server_Library::Framework_Server::Get_Server()->Get_Algorithms()->Get_User_Algorithms()->Get_Praise0_Algorithm())
 			);
 			break;
 

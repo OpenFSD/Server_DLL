@@ -1,8 +1,8 @@
 #pragma once
-#include "Framework.h"
+#include "Framework_Server.h"
 #include "Input_Control.h"
 
-namespace ServerLibrary
+namespace Server_Library
 {
     class Input
     {

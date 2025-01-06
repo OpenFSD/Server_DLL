@@ -1,7 +1,7 @@
 #include "Global.h"
 #include <cstddef>
 
-namespace ServerLibrary
+namespace Server_Library
 {
     bool Global::flag_core_ACTIVE = NULL;
     bool Global::flag_core_IDLE = NULL;

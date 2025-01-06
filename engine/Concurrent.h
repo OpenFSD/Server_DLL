@@ -1,11 +1,11 @@
 #pragma once
 #include "Concurrent_Control.h"
-#include "Framework.h"
+#include "Framework_Server.h"
 #include "..\\user_praise_files\\Praise0_Algorithm.h"
 #include "..\\user_praise_files\\Praise0_Input.h"
 #include "..\\user_praise_files\\Praise0_Output.h"
 
-namespace ServerLibrary
+namespace Server_Library
 {
     class Concurrent
     {

@@ -1,7 +1,7 @@
 #include "Execute_Control.h"
 #include <cstddef>
 
-namespace ServerLibrary
+namespace Server_Library
 {
 	bool Execute_Control::flag_SystemInitialised = NULL;
 	bool Execute_Control::flag_ThreadInitialised[4] = { NULL, NULL, NULL, NULL };//NUMBER OF CORES

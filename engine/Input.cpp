@@ -1,7 +1,7 @@
 #include "Input.h"
 #include <cstddef>
 
-namespace ServerLibrary
+namespace Server_Library
 {
     class Input_Control* Input::ptr_Input_Control = NULL;
     class Object* Input::ptr_Buffer_SubSet_InputPraise = NULL;
@@ -24,7 +24,7 @@ namespace ServerLibrary
 
     void Input::Initialise_Control()
     {
-        ptr_Input_Control = new class ServerLibrary::Input_Control();
+        ptr_Input_Control = new class Server_Library::Input_Control();
         while (ptr_Input_Control == NULL) { /* wait untill created */ }
     }
 

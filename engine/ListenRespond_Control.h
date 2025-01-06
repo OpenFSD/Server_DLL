@@ -1,6 +1,6 @@
 #pragma once
 
-namespace ServerLibrary
+namespace Server_Library
 {
     class ListenRespond_Control
     {

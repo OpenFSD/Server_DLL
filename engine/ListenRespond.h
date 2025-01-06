@@ -1,8 +1,8 @@
 #pragma once
 #include "ListenRespond_Control.h"
-#include "Framework.h"
+#include "Framework_Server.h"
 
-namespace ServerLibrary
+namespace Server_Library
 {
     class ListenRespond
     {

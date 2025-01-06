@@ -1,4 +1,4 @@
-# Dynamic Server Link Library
+# Server_Library Static Server Library (Windows)
 
 
 ## Server, Buffer and Networking For Full Stack Development
@@ -15,9 +15,9 @@
 - Version 17.10.5
 
 ## Dependencies
-### Server Library .DLL
-- WriteEnableWait .DLL
-- ConcurrentQueLauncher .DLL
+### Server_Library Server Library Windows
+- WriteEnableWait
+- ConcurrentQueLauncher
 
    
 ## Development History

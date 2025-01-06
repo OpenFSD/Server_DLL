@@ -4,7 +4,7 @@
 #include "Execute.h"
 #include "Global.h"
 
-namespace ServerLibrary
+namespace Server_Library
 {
     class Server
     {

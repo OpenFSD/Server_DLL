@@ -1,7 +1,7 @@
 #include "Execute.h"
 #include <cstddef>
 
-namespace ServerLibrary
+namespace Server_Library
 {
     class Execute_Control* Execute::ptr_Execute_Control = NULL;
     class ConcurrentQue::LaunchConcurrency* Execute::ptr_LaunchConcurrency = NULL;
@@ -43,29 +43,29 @@ namespace ServerLibrary
 
     void Execute::Initialise()
     {
-        ServerLibrary::Framework::Get_Server()->Get_Algorithms()->Initialise(ServerLibrary::Framework::Get_Server()->Get_Global()->Get_NumCores());
+        Server_Library::Framework_Server::Get_Server()->Get_Algorithms()->Initialise(Server_Library::Framework_Server::Get_Server()->Get_Global()->Get_NumCores());
     }
 
     void Execute::Initialise_Control(
         unsigned char* ptr_MyNumImplementedCores,
-        ServerLibrary::Global* ptr_Global
+        Server_Library::Global* ptr_Global
     )
     {
-        ptr_Execute_Control = new class ServerLibrary::Execute_Control(ptr_MyNumImplementedCores);
+        ptr_Execute_Control = new class Server_Library::Execute_Control(ptr_MyNumImplementedCores);
         while (ptr_Execute_Control == NULL) { /* wait untill created */ }
     }
 
     void Execute::Initialise_Threads()
     {
-        for (unsigned char index = 0; index < *ServerLibrary::Framework::Get_Server()->Get_Global()->Get_NumCores(); index++)
+        for (unsigned char index = 0; index < *Server_Library::Framework_Server::Get_Server()->Get_Global()->Get_NumCores(); index++)
         {
             ptr_Thread_WithCoreId[index] = new std::thread(
-                ServerLibrary::Framework::Get_Server()->Get_Algorithms()->Get_Concurren_Array(int(index))->Thread_Concurrency,
+                Server_Library::Framework_Server::Get_Server()->Get_Algorithms()->Get_Concurren_Array(int(index))->Thread_Concurrency,
                 unsigned char(index),
-                ServerLibrary::Framework::Get_Server()->Get_Global()->Get_NumCores()
+                Server_Library::Framework_Server::Get_Server()->Get_Global()->Get_NumCores()
             );
         }
-        while (ServerLibrary::Framework::Get_Server()->Get_Execute()->Get_Execute_Control()->GetFlag_SystemInitialised(ServerLibrary::Framework::Get_Server()->Get_Global()->Get_NumCores()) != false)
+        while (Server_Library::Framework_Server::Get_Server()->Get_Execute()->Get_Execute_Control()->GetFlag_SystemInitialised(Server_Library::Framework_Server::Get_Server()->Get_Global()->Get_NumCores()) != false)
         {
 
         }

@@ -2,7 +2,7 @@
 #include <cstddef>
 
 
-namespace ServerLibrary
+namespace Server_Library
 {
     class Output_Control* Output::ptr_Control_Of_Output = NULL;
     int* Output::ptr_out_PraiseEventId = NULL;
@@ -23,7 +23,7 @@ namespace ServerLibrary
 
     void Output::Initialise_Control()
     {
-        ptr_Control_Of_Output = new class ServerLibrary::Output_Control();
+        ptr_Control_Of_Output = new class Server_Library::Output_Control();
         while (ptr_Control_Of_Output == nullptr) { /* wait untill created */ }
     }
 

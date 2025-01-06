@@ -1,6 +1,6 @@
 #include "Output_Control.h"
 
-namespace ServerLibrary
+namespace Server_Library
 {
 	Output_Control::Output_Control()
 	{
@@ -24,8 +24,8 @@ namespace ServerLibrary
 		switch (*ptr_praiseEventId)
 		{
 		case 0:
-			//ServerLibrary::Framework::Get_Server()->Get_Data()->Get_OutputRefferenceOfCore(concurrent_coreId)->Set_OutputBuffer_Subset(
-			//	reinterpret_cast<class Object*>(ServerLibrary::Framework::Get_Server()->Get_Data()->Get_User_O()->Get_Praise0_Output())
+			//Server_Library::Framework_Server::Get_Server()->Get_Data()->Get_OutputRefferenceOfCore(concurrent_coreId)->Set_OutputBuffer_Subset(
+			//	reinterpret_cast<class Object*>(Server_Library::Framework_Server::Get_Server()->Get_Data()->Get_User_O()->Get_Praise0_Output())
 			//);
 			break;
 

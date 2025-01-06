@@ -9,7 +9,7 @@
 #include "..\\user_praise_files\\User_I.h"
 #include "..\\user_praise_files\\User_O.h"
 
-namespace ServerLibrary
+namespace Server_Library
 {
     class Data
     {

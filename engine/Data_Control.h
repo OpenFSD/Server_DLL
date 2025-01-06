@@ -3,7 +3,7 @@
 #include "Input.h"
 #include "Output.h"
 
-namespace ServerLibrary
+namespace Server_Library
 {
     class Data_Control
     {

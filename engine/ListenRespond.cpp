@@ -1,7 +1,7 @@
 #include "ListenRespond.h"
 #include <cstddef>
 
-namespace ServerLibrary
+namespace Server_Library
 {
     class ListenRespond_Control* ListenRespond::ptr_ListenRespond_Control = NULL;
 
@@ -17,7 +17,7 @@ namespace ServerLibrary
 
     void ListenRespond::Initialise_Control()
     {
-        ptr_ListenRespond_Control = new class ServerLibrary::ListenRespond_Control();
+        ptr_ListenRespond_Control = new class Server_Library::ListenRespond_Control();
         while (ptr_ListenRespond_Control == NULL) { /* wait untill class constructed */ }
     }
 

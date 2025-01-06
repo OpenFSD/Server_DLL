@@ -1,7 +1,7 @@
 #pragma once
 #include "Output_Control.h"
 
-namespace ServerLibrary
+namespace Server_Library
 {
     class Output
     {
