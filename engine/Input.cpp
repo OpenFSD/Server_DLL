@@ -5,13 +5,13 @@ namespace Server_Library
 {
     class Input_Control* Input::ptr_Input_Control = NULL;
     class Object* Input::ptr_Buffer_SubSet_InputPraise = NULL;
-    int* Input::ptr_in_praiseEventId = NULL;
+    __int16* Input::ptr_in_praiseEventId = NULL;
 
     Input::Input()
     {
         ptr_Buffer_SubSet_InputPraise = NULL;
         
-        ptr_in_praiseEventId = new int(0);
+        ptr_in_praiseEventId = new __int16(0);
         while (ptr_in_praiseEventId == NULL) { /* wait untill created */ }
     }
 
@@ -48,8 +48,8 @@ namespace Server_Library
         ptr_Buffer_SubSet_InputPraise = value;
     }
 
-    void Input::SetPraiseEventId(int value)
+    void Input::SetPraiseEventId(__int16 value)
     {
-        ptr_in_praiseEventId = &value;
+        ptr_in_praiseEventId = value;
     }
 }

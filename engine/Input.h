@@ -23,7 +23,7 @@ namespace Server_Library
     private:
         static class Input_Control* ptr_Input_Control;
         static class Object* ptr_Buffer_SubSet_InputPraise;
-        static int* ptr_in_praiseEventId;
+        static __int16* ptr_in_praiseEventId;
 
     };
 }

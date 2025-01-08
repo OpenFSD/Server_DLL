@@ -14,6 +14,9 @@ namespace Server_Library
     class Data_Control* Data::ptr_Data_Control = NULL;
     std::vector<class Input*>* Data::ptr_Stack_InputPraise = NULL;
     std::vector<class Output*>* Data::ptr_Stack_OutputDistribute = NULL;
+    std::vector<class Input*>* Data::ptr_Stack_InputActions = NULL;
+    std::vector<class Output*>* Data::ptr_Stack_OutputRecieves = NULL;
+
     //buffer sub sets
     class User_I* Data::ptr_User_I = NULL;
     class User_O* Data::ptr_User_O = NULL;
@@ -67,6 +70,16 @@ namespace Server_Library
         while (ptr_Stack_OutputDistribute == NULL) { /* wait untill created */ }
         ptr_Stack_OutputDistribute->resize(1);
         ptr_Stack_OutputDistribute->at(0) = ptr_EmptyBuffer_Output;
+
+        ptr_Stack_InputActions = new std::vector<class Server_Library::Input*>;
+        while (ptr_Stack_InputActions == NULL) { /* wait untill created */ }
+        ptr_Stack_InputActions->resize(1);
+        ptr_Stack_InputActions->at(0) = ptr_EmptyBuffer_Input;
+
+        ptr_Stack_OutputRecieves = new std::vector<class Server_Library::Output*>;
+        while (ptr_Stack_OutputRecieves == NULL) { /* wait untill created */ }
+        ptr_Stack_OutputRecieves->resize(1);
+        ptr_Stack_OutputRecieves->at(0) = ptr_EmptyBuffer_Output;
 
         ptr_User_I = new User_I();
         while (ptr_User_I == NULL) { /* wait untill created */ }
@@ -183,17 +196,27 @@ namespace Server_Library
         return state_OutBufferToWrite;
     }
 
-    std::vector<class Server_Library::Input*>* Data::Get_StackOfInputPraise()
+    std::vector<class Server_Library::Input*>* Data::Get_Stack_InputPraise()
     {
         return ptr_Stack_InputPraise;
     }
 
-    std::vector<class Server_Library::Output*>* Data::Get_StackOfDistributeBuffer()
+    std::vector<class Server_Library::Output*>* Data::Get_Stack_DistributeBuffer()
     {
         return ptr_Stack_OutputDistribute;
     }
 
-    class User_I* Data::Get_User_I() 
+    std::vector<class Server_Library::Input*>* Data::Get_Stack_InputActions()
+    {
+        return ptr_Stack_InputActions;
+    }
+
+    std::vector<class Server_Library::Output*>* Data::Get_Stack_OutputRecieves()
+    {
+        return ptr_Stack_OutputRecieves;
+    }
+
+    class User_I* Data::Get_User_I()
     {
         return ptr_User_I;
     }

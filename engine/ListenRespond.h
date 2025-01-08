@@ -9,7 +9,12 @@ namespace Server_Library
     public:
         ListenRespond();
         virtual ~ListenRespond();
+
         void Initialise_Control();
+        static void Thread_IO_ListenDistribute(
+            unsigned char coreId,
+            unsigned char* ptr_MyNumImplementedCores
+        );
 
         class ListenRespond_Control* Get_ListenRespond_Control();
 

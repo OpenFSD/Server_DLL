@@ -34,8 +34,10 @@ namespace Server_Library
         class Output* Get_New_OutputBuffer();
         bool GetState_InputBuffer();
         bool GetState_OutputBuffer();
-        std::vector<class Input*>* Get_StackOfInputPraise();
-        std::vector<class Output*>* Get_StackOfDistributeBuffer();
+        std::vector<class Input*>* Get_Stack_InputPraise();
+        std::vector<class Output*>* Get_Stack_DistributeBuffer();
+        std::vector<class Input*>* Get_Stack_InputActions();
+        std::vector<class Output*>* Get_Stack_OutputRecieves();
         class User_I* Get_User_I();
         class User_O* Get_User_O();
 
@@ -56,6 +58,8 @@ namespace Server_Library
         static class Data_Control* ptr_Data_Control;
         static std::vector<class Input*>* ptr_Stack_InputPraise;
         static std::vector<class Output*>* ptr_Stack_OutputDistribute;
+        static std::vector<class Input*>* ptr_Stack_InputActions;
+        static std::vector<class Output*>* ptr_Stack_OutputRecieves;
     //buffer sub sets
         static class User_I* ptr_User_I;
         static class User_O* ptr_User_O;

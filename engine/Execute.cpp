@@ -57,11 +57,17 @@ namespace Server_Library
 
     void Execute::Initialise_Threads()
     {
-        for (unsigned char index = 0; index < *Server_Library::Framework_Server::Get_Server()->Get_Global()->Get_NumCores(); index++)
+        ptr_Thread_WithCoreId[0] = new std::thread(
+            Server_Library::Framework_Server::Get_Server()->Get_Algorithms()->Get_ListenRespond()->Thread_IO_ListenDistribute;
+            unsigned char(0),
+            Server_Library::Framework_Server::Get_Server()->Get_Global()->Get_NumCores()
+        );
+
+        for (unsigned char coreId = 1; coreId < *Server_Library::Framework_Server::Get_Server()->Get_Global()->Get_NumCores(); coreId++)
         {
-            ptr_Thread_WithCoreId[index] = new std::thread(
-                Server_Library::Framework_Server::Get_Server()->Get_Algorithms()->Get_Concurren_Array(int(index))->Thread_Concurrency,
-                unsigned char(index),
+            ptr_Thread_WithCoreId[coreId] = new std::thread(
+                Server_Library::Framework_Server::Get_Server()->Get_Algorithms()->Get_Concurren_Array(int(coreId))->Thread_Concurrency,
+                unsigned char(coreId),
                 Server_Library::Framework_Server::Get_Server()->Get_Global()->Get_NumCores()
             );
         }
