@@ -1,5 +1,5 @@
-# Server_Library Static Server Library (Windows)
-
+# Server Dynamic Link Library .Net
+Concurrent Core Handler for a Host Server TEMPLATE, with a user implemented design.
 
 ## Server, Buffer and Networking For Full Stack Development
 - Architecture.PNG => https://drive.google.com/file/d/1AzNi2YrukRCVLelxfj8uvzhFDI4ytWBs/view?usp=sharing
@@ -15,9 +15,10 @@
 - Version 17.10.5
 
 ## Dependencies
-### Server_Library Server Library Windows
-- WriteEnableWait
-- ConcurrentQueLauncher
+### WriteEnableForStacks
+- https://github.com/OpenFSD/WriteEnableForStacks
 
-   
+### WriteEnableForStacks
+- https://github.com/OpenFSD/WaitLaunchConcurrentThread
+
 ## Development History
