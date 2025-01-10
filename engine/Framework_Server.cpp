@@ -52,6 +52,16 @@ namespace Server_Library
 		return ptr_HostServer;
 	}
 
+	int Framework_Server::Get_NumberOfCores()
+	{
+		return Server_Library::Framework_Server::Get_HostServer().Get_Global()->Get_NumCores();
+	}
+
+	bool Framework_Server::GetState_Buffer_Input_ToWrite()
+	{
+		return Server_Library::Framework_Server::Get_HostServer().Get_Data().GetState_InputBuffer();
+	}
+
 	int Get_NumberOfCores()
 	{
 		return Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores()
