@@ -31,16 +31,6 @@ namespace Server_Library
 
 	}
 
-	void Framework_Server::PushToStackOfInputPraises(
-		std::vector<class Server_Library::Input*>* ptr_InputStack,
-		class Server_Library::Input* ptr_Buffer_Praise)
-	{
-		Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_Data_Control()->PushToStackOfInputPraises(
-			ptr_InputStack,
-			ptr_Buffer_Praise
-		);
-	}
-
 	bool Framework_Server::Get_Ack_InputAction_Capture()
 	{
 		return Server_Library::Framework_Server::Get_HostServer()->Get_Algorithms()->Get_ListenRespond()->Get_ListenRespond_Control()->GetFlag_Acknowledge_Input_Capture();
@@ -52,26 +42,16 @@ namespace Server_Library
 		return ptr_HostServer;
 	}
 
-	unsigned char Framework_Server::Get_NumberOfCores()
-	{
-		return 0;
-	}
-
 	bool Framework_Server::GetState_Buffer_Input_ToWrite()
 	{
 		return false;
 	}
 
-	unsigned char Get_NumberOfCores()
+	unsigned char Framework_Server::Get_NumberOfCores()
 	{
-		return 0;// Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores()
+		return Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores();
 	}
 	
-	bool GetState_Buffer_Input_ToWrite()
-	{
-
-	}
-
 	WaitEnableWrite::WriteEnable* Framework_Server::Get_WriteEnable_Stack_InputPraise()
 	{
 		return Server_Library::Framework_Server::Get_HostServer()->Get_Execute()->Get_WriteEnable_Stack_InputPraise();

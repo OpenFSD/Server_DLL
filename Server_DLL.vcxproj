@@ -131,15 +131,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="bin\abseil_dll.dll" />
-    <None Include="bin\GameNetworkingSockets.dll" />
-    <None Include="bin\libcrypto-3.dll" />
-    <None Include="bin\libprotobufd.dll" />
-    <None Include="bin\WaitLaunch_Server_ConcurrentThread.dll" />
-    <None Include="bin\WriteEnable_Stack_InputPraise.dll" />
-    <None Include="bin\WriteEnable_Stack_OutputPraise.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="engine\Algorithms.cpp" />
     <ClCompile Include="engine\Concurrent.cpp" />
     <ClCompile Include="engine\Concurrent_Control.cpp" />
@@ -200,6 +191,15 @@
     <ClInclude Include="include\write_enable\Global_WriteEnable.h" />
     <ClInclude Include="include\write_enable\WriteEnable.h" />
     <ClInclude Include="include\write_enable\WriteEnable_Control.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\abseil_dll.dll" />
+    <None Include="bin\GameNetworkingSockets.dll" />
+    <None Include="bin\libcrypto-3.dll" />
+    <None Include="bin\libprotobufd.dll" />
+    <None Include="bin\WaitLaunch_Server_ConcurrentThread.dll" />
+    <None Include="bin\WriteEnable_Stack_InputPraise.dll" />
+    <None Include="bin\WriteEnable_Stack_OutputPraise.dll" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

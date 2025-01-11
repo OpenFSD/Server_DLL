@@ -13,7 +13,7 @@ namespace Server_Library
         void Initialise_Control();
         static void Thread_IO_ListenDistribute(
             unsigned char coreId,
-            unsigned char* ptr_MyNumImplementedCores
+            unsigned char number_Implemented_Cores
         );
 
         class ListenRespond_Control* Get_ListenRespond_Control();

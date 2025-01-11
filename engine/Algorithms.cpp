@@ -42,7 +42,7 @@ namespace Server_Library
     }
 
 
-    void Algorithms::Initialise(unsigned char* ptr_NumberOfImplementedCores)
+    void Algorithms::Initialise(unsigned char number_Implemented_Cores)
     {
         ptr_ListenRespond = new class Server_Library::ListenRespond();
         while (ptr_ListenRespond == NULL) { /* wait untill created */ }
@@ -52,7 +52,7 @@ namespace Server_Library
         while(ptr_New_Concurrent == NULL) { /* wait untill created */ }
         ptr_New_Concurrent->Initialise_Control();
 
-        for (unsigned char index = 0; index < *ptr_NumberOfImplementedCores - 1; index++)
+        for (unsigned char index = 0; index < (number_Implemented_Cores - 1); index++)
         {
             ptr_Concurrent[index] = ptr_New_Concurrent;
         }

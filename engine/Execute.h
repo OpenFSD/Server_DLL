@@ -15,18 +15,18 @@ namespace Server_Library
     public:
         Execute(
             class Global* ptr_Global,
-            unsigned char* ptr_MyNumImplementedCores
+            unsigned char number_Implemented_Cores
         );
         virtual ~Execute();
         void Initialise();
         void Initialise_Control(
-            unsigned char* ptr_MyNumImplementedCores,
+            unsigned char number_Implemented_Cores,
             class Global* ptr_Global
         );
         void Initialise_Threads();
 
         class Execute_Control* Get_Execute_Control();
-        class ConcurrentQue::LaunchConcurrency* Get_LaunchConcurrency();
+        class ConcurrentQue::LaunchConcurrency* Get_LaunchConcurrency_ServerSide();
         class WaitEnableWrite::WriteEnable* Get_WriteEnable_Stack_InputPraise();
         class WaitEnableWrite::WriteEnable* Get_WriteEnable_Stack_OutputPraise();
 
@@ -34,7 +34,7 @@ namespace Server_Library
 
     private:
         static class Execute_Control* ptr_Execute_Control;
-        static class ConcurrentQue::LaunchConcurrency* ptr_LaunchConcurrency;
+        static class ConcurrentQue::LaunchConcurrency* ptr_LaunchConcurrency_ServerSide;
         static std::thread* ptr_Thread_WithCoreId[4];//NUMBER OF CORES
         static class WaitEnableWrite::WriteEnable* ptr_WriteEnable_Stack_InputPraise;
         static class WaitEnableWrite::WriteEnable* ptr_WriteEnable_Stack_OutputPraise;

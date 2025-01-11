@@ -14,7 +14,7 @@ namespace Server_Library
     class Data
     {
     public:
-        Data(unsigned char* ptr_NumberOfImplementedCores);
+        Data(unsigned char number_Implemented_Cores);
         virtual ~Data();
 
         __int8 BoolToInt(bool bufferSide);

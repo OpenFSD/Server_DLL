@@ -15,15 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\abseil_dll.dll" />
-    <None Include="bin\GameNetworkingSockets.dll" />
-    <None Include="bin\libcrypto-3.dll" />
-    <None Include="bin\libprotobufd.dll" />
-    <None Include="bin\WaitLaunch_Server_ConcurrentThread.dll" />
-    <None Include="bin\WriteEnable_Stack_InputPraise.dll" />
-    <None Include="bin\WriteEnable_Stack_OutputPraise.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="engine\Algorithms.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -200,5 +191,14 @@
     <ClInclude Include="include\write_enable\WriteEnable_Control.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\abseil_dll.dll" />
+    <None Include="bin\GameNetworkingSockets.dll" />
+    <None Include="bin\libcrypto-3.dll" />
+    <None Include="bin\libprotobufd.dll" />
+    <None Include="bin\WaitLaunch_Server_ConcurrentThread.dll" />
+    <None Include="bin\WriteEnable_Stack_InputPraise.dll" />
+    <None Include="bin\WriteEnable_Stack_OutputPraise.dll" />
   </ItemGroup>
 </Project>

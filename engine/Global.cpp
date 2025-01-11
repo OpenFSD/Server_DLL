@@ -3,20 +3,26 @@
 
 namespace Server_Library
 {
-    unsigned char* Global::ptr_num_Implemented_Cores = NULL;
+    unsigned char Global::number_Implemented_Cores = NULL;
+    unsigned char Global::number_Praise_Events = NULL;
 
     Global::Global()
     {
-        ptr_num_Implemented_Cores = new unsigned char(4);//NUMBER OF CORES
+        number_Implemented_Cores = unsigned char(4);//NUMBER OF CORES
+        number_Praise_Events = unsigned char(2);
     }
 
     Global::~Global()
     {
-        delete ptr_num_Implemented_Cores;
+        
     }
 
-    unsigned char* Global::Get_NumCores()
+    unsigned char Global::Get_NumCores()
     {
-        return ptr_num_Implemented_Cores;
+        return number_Implemented_Cores;
+    }
+    unsigned char Global::Get_NumPraiseEvetns()
+    {
+        return number_Praise_Events;
     }
 }

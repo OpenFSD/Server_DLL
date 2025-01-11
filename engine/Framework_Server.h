@@ -2,6 +2,8 @@
 #define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
 #include "Server.h"
 #include "Data.h"
+#include "Input.h"
+#include "Output.h"
 #include "user_praise_files\\Praise0_Input.h"
 #include "user_praise_files\\Praise0_Output.h"
 
@@ -17,10 +19,6 @@ namespace Server_Library
         static void PopFromStackOfOutput(
             class Server_Library::Output* distributeBuffer,
             std::vector<class Server_Library::Output*>* ptr_outputStack
-        );
-        static void PushToStackOfInputPraises(
-            std::vector<class Server_Library::Input*>* ptr_InputStack,
-            class Server_Library::Input* ptr_Buffer_Praise
         );
         
         static bool Get_Ack_InputAction_Capture();

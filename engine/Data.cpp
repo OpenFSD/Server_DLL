@@ -22,7 +22,7 @@ namespace Server_Library
     bool Data::state_InBufferToWrite = true;
     bool Data::state_OutBufferToWrite = true;
 
-    Data::Data(unsigned char* ptr_NumberOfImplementedCores)
+    Data::Data(unsigned char number_Implemented_Cores)
     {
        // ptr_GameInstance = new class Server_Library::Game();
        // while (ptr_GameInstance == NULL) { /* wait untill created */ }
@@ -45,12 +45,12 @@ namespace Server_Library
             ptr_Buffer_OututDouble[index] = new Output();
             while (ptr_Buffer_OututDouble[index] == NULL) { /* wait untill created */ }
         }
-        for (__int8 index = 0; index < (*Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores() - 1); index++)
+        for (__int8 index = 0; index < (Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores() - 1); index++)
         {
             ptr_Buffer_InputReference_ForCore[index] = new Input();
             while (ptr_Buffer_InputReference_ForCore[index] == NULL) { /* wait untill created */ }
         }
-        for (__int8 index = 0; index < (*Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores() - 1); index++)
+        for (__int8 index = 0; index < (Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores() - 1); index++)
         {
             ptr_Buffer_OutputReference_ForCore[index] = new Output();
             while (ptr_Buffer_OutputReference_ForCore[index] == NULL) { /* wait untill created */ }

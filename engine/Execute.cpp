@@ -4,35 +4,35 @@
 namespace Server_Library
 {
     class Execute_Control* Execute::ptr_Execute_Control = NULL;
-    class ConcurrentQue::LaunchConcurrency* Execute::ptr_LaunchConcurrency = NULL;
+    class ConcurrentQue::LaunchConcurrency* Execute::ptr_LaunchConcurrency_ServerSide = NULL;
     std::thread* Execute::ptr_Thread_WithCoreId[4] = { NULL, NULL, NULL, NULL };//NUMBER OF CORES
     class WaitEnableWrite::WriteEnable* Execute::ptr_WriteEnable_Stack_InputPraise = NULL;
     class WaitEnableWrite::WriteEnable* Execute::ptr_WriteEnable_Stack_OutputPraise = NULL;
 
     Execute::Execute(
         Global* ptr_Global,
-        unsigned char* ptr_MyNumImplementedCores
+        unsigned char number_Implemented_Cores
     )
     {
         ptr_Execute_Control = NULL;
 
-        ptr_LaunchConcurrency = new class ConcurrentQue::LaunchConcurrency();
-        while (ptr_LaunchConcurrency == NULL) { /* wait untill created */ }
-        ptr_LaunchConcurrency->Initialise_Control(ptr_LaunchConcurrency->Get_GlobalForLaunchConcurrency(), ptr_MyNumImplementedCores);
+        ptr_LaunchConcurrency_ServerSide = new class ConcurrentQue::LaunchConcurrency();
+        while (ptr_LaunchConcurrency_ServerSide == NULL) { /* wait untill created */ }
+        ptr_LaunchConcurrency_ServerSide->Initialise_Control(ptr_LaunchConcurrency_ServerSide->Get_GlobalForLaunchConcurrency(), number_Implemented_Cores);
 
         ptr_WriteEnable_Stack_InputPraise = new class WaitEnableWrite::WriteEnable();
         while (ptr_WriteEnable_Stack_InputPraise == NULL) { /* wait untill created */ }
-        ptr_WriteEnable_Stack_InputPraise->Initialise_Control(ptr_WriteEnable_Stack_InputPraise->Get_GlobalForWriteControl(), ptr_MyNumImplementedCores);
+        ptr_WriteEnable_Stack_InputPraise->Initialise_Control(ptr_WriteEnable_Stack_InputPraise->Get_GlobalForWriteControl());
 
         ptr_WriteEnable_Stack_OutputPraise = new class WaitEnableWrite::WriteEnable();
         while (ptr_WriteEnable_Stack_OutputPraise == NULL) { /* wait untill created */ }
-        ptr_WriteEnable_Stack_OutputPraise->Initialise_Control(ptr_WriteEnable_Stack_OutputPraise->Get_GlobalForWriteControl(), ptr_MyNumImplementedCores);
+        ptr_WriteEnable_Stack_OutputPraise->Initialise_Control(ptr_WriteEnable_Stack_OutputPraise->Get_GlobalForWriteControl());
     }
 
     Execute::~Execute()
     {
         delete ptr_Execute_Control;
-        delete ptr_LaunchConcurrency;
+        delete ptr_LaunchConcurrency_ServerSide;
         delete ptr_WriteEnable_Stack_InputPraise;
         delete ptr_WriteEnable_Stack_OutputPraise;
         for (int index = 0; index < 4; index++)
@@ -49,11 +49,11 @@ namespace Server_Library
     }
 
     void Execute::Initialise_Control(
-        unsigned char* ptr_MyNumImplementedCores,
+        unsigned char number_Implemented_Cores,
         Server_Library::Global* ptr_Global
     )
     {
-        ptr_Execute_Control = new class Server_Library::Execute_Control(ptr_MyNumImplementedCores);
+        ptr_Execute_Control = new class Server_Library::Execute_Control(number_Implemented_Cores);
         while (ptr_Execute_Control == NULL) { /* wait untill created */ }
     }
 
@@ -65,7 +65,7 @@ namespace Server_Library
             Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores()
         );
 
-        for (unsigned char coreId = 1; coreId < *Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores(); coreId++)
+        for (unsigned char coreId = 1; coreId < Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores(); coreId++)
         {
             ptr_Thread_WithCoreId[coreId] = new std::thread(
                 Server_Library::Framework_Server::Get_HostServer()->Get_Algorithms()->Get_Concurren_Array(int(coreId))->Thread_Concurrency,
@@ -84,9 +84,9 @@ namespace Server_Library
         return ptr_Execute_Control;
     }
 
-    class ConcurrentQue::LaunchConcurrency* Execute::Get_LaunchConcurrency()
+    class ConcurrentQue::LaunchConcurrency* Execute::Get_LaunchConcurrency_ServerSide()
     {
-        return ptr_LaunchConcurrency;
+        return ptr_LaunchConcurrency_ServerSide;
     }
 
     class WaitEnableWrite::WriteEnable* Execute::Get_WriteEnable_Stack_InputPraise()

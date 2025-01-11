@@ -12,7 +12,7 @@ namespace Server_Library
         Algorithms();
         virtual ~Algorithms();
         
-        void Initialise(unsigned char* ptr_NumberOfImplementedCores);
+        void Initialise(unsigned char ptr_NumberOfImplementedCores);
 
         class Concurrent* Get_Concurren_Array(int concurrent_coreId);
         class ListenRespond* Get_ListenRespond();

@@ -11,19 +11,17 @@ namespace WaitEnableWrite
         WriteEnable();
         virtual ~WriteEnable();
         void Initialise_Control(
-            class Global_WriteEnable* ptr_Global,
-            unsigned char* ptr_MyNumImplementedCores
+            class Global_WriteEnable* ptr_Global
         );
         void Write_End(
             class WriteEnable_Control* ptr_WriteEnable_Control,
-            unsigned char* ptr_coreId,
-            unsigned char* ptr_MyNumImplementedCores,
+            unsigned char coreId,
             class Global_WriteEnable* ptr_Global
+            
         );
         void Write_Start(
             class WriteEnable_Control* ptr_WriteEnable_Control,
-            unsigned char* ptr_coreId,
-            unsigned char* ptr_MyNumImplementedCores,
+            unsigned char coreId,
             class Global_WriteEnable* ptr_Global
         );
 

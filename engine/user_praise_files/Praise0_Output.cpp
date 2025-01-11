@@ -1,14 +1,17 @@
 #include "Praise0_Output.h"
+#include <cstddef>
 
 namespace Server_Library
 {
+	const double PI = 3.141592653589793238463;
+
 	float Praise0_Output::_pitch = NULL;
 	float Praise0_Output::_yaw = NULL;
 
 	Praise0_Output::Praise0_Output()
 	{
 		_pitch = 0;
-		_yaw = -(M_PI / 2);
+		_yaw = -(PI / 2);
 	}
 
 	Praise0_Output::~Praise0_Output()

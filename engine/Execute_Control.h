@@ -7,10 +7,10 @@ namespace Server_Library
     class Execute_Control
     {
     public:
-        Execute_Control(unsigned char* ptr_MyNumImplementedCores);
+        Execute_Control(unsigned char number_Implemented_Cores);
         virtual ~Execute_Control();
 
-        bool GetFlag_SystemInitialised(unsigned char* ptr_MyNumImplementedCores);
+        bool GetFlag_SystemInitialised(unsigned char number_Implemented_Cores);
         bool GetFlag_ThreadInitialised(unsigned char coreId);
 
         void SetConditionCodeOfThisThreadedCore(unsigned char coreId);

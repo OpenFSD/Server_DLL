@@ -10,11 +10,11 @@ namespace Server_Library
 	static class Execute_Control* ptr_Execute_Control;
 	static std::thread* ptr_Thread_WithCoreId[4];//NUMBER OF CORES
 
-	Execute_Control::Execute_Control(unsigned char* ptr_MyNumImplementedCores)
+	Execute_Control::Execute_Control(unsigned char number_Implemented_Cores)
 	{
 		flag_SystemInitialised = bool(true);
 		bool flag_ThreadInitialised[4] = { bool(true), bool(true), bool(true), bool(true) };//NUMBER OF CORES
-		for (unsigned char index = 0; index < *ptr_MyNumImplementedCores; index++) {
+		for (unsigned char index = 0; index < number_Implemented_Cores; index++) {
 			flag_ThreadInitialised[index] = new bool(true);
 		}
 	}
@@ -24,9 +24,9 @@ namespace Server_Library
 
 	}
 
-	bool Execute_Control::GetFlag_SystemInitialised(unsigned char* ptr_MyNumImplementedCores)
+	bool Execute_Control::GetFlag_SystemInitialised(unsigned char number_Implemented_Cores)
 	{
-		for (int index = 0; index < *ptr_MyNumImplementedCores; index++)
+		for (int index = 0; index < number_Implemented_Cores; index++)
 		{
 			flag_SystemInitialised = false;
 			if (flag_ThreadInitialised[index] == true)
