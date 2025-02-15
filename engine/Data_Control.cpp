@@ -15,36 +15,68 @@ namespace Server_Library
 
     }
 
-    void Server_Library::Data_Control::PopFromStackOfInputPraises(
-        class Server_Library::Input* referenceForCore,
-        std::vector<class Server_Library::Input*>* ptr_inputStack
-    )
+    void Server_Library::Data_Control::Pop_Stack_InputPraises(__int8 concurrentCoreId)
     {
-
+        class Server_Library::Input* referenceForCore = Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_InputRefferenceOfCore(concurrentCoreId);
+        std::vector<class Server_Library::Input*>* ptr_inputStack = Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_Stack_InputPraise();
+        referenceForCore = ptr_inputStack->at(1);
+        ptr_inputStack->erase(ptr_inputStack->begin()+1);
+        if (sizeof(ptr_inputStack) < 2)
+        {
+            SetFlag_InputStackLoaded(false);
+        }
+        else
+        {
+            SetFlag_InputStackLoaded(true);
+        }
     }
 
-    void Data_Control::PopFromStackOfOutput(
-        class Server_Library::Output* distributeBuffer,
-        std::vector<class Server_Library::Output*>* ptr_outputStack
-    )
+    void Data_Control::Pop_Stack_Output()
     {
-
+        class Output* distributeBuffer = Server_Library::Framework_Server::Get_HostServer()->Get_Data()->GetBuffer_OutputBackDouble();
+        std::vector<class Output*>* ptr_outputStack = Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_Stack_OutputPraise();
+        distributeBuffer = ptr_outputStack->at(1);
+        ptr_outputStack->erase(ptr_outputStack->begin()+1);
+        if (sizeof(ptr_outputStack) < 2)
+        {
+            SetFlag_OutputStackLoaded(false);
+        }
+        else
+        {
+            SetFlag_OutputStackLoaded(true);
+        }
     }
 
-    void Data_Control::PushToStackOfInputPraises(
-        std::vector<class Server_Library::Input*>* ptr_InputStack,
-        class Server_Library::Input* ptr_Buffer_Praise
-    )
+    void Data_Control::Push_Stack_InputPraises()
     {
-
+        std::vector<class Server_Library::Input*>* ptr_InputStack = Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_Stack_InputPraise();
+        class Server_Library::Input* ptr_Buffer_Praise = Server_Library::Framework_Server::Get_HostServer()->Get_Data()->GetBuffer_InputBackDouble();
+        ptr_InputStack->push_back(ptr_InputStack->at(0));
+        ptr_InputStack->at(ptr_InputStack->size()) = ptr_Buffer_Praise;
+        if (sizeof(ptr_InputStack) < 2)
+        {
+            SetFlag_InputStackLoaded(false);
+        }
+        else
+        {
+            SetFlag_InputStackLoaded(true);
+        }
     }
 
-    void Data_Control::PushToStackOfOutput(
-        std::vector<class Server_Library::Output*>* ptr_outputStack,
-        class Server_Library::Output* ptr_referenceForCore
-    )
+    void Data_Control::Push_Stack_Output(__int8 concurrentCoreId)
     {
-
+        std::vector<class Server_Library::Output*>* ptr_outputStack = Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_Stack_OutputPraise();
+        class Server_Library::Output* ptr_referenceForCore = Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_OutputRefferenceOfCore(concurrentCoreId);
+        ptr_outputStack->push_back(ptr_outputStack->at(0));
+        ptr_outputStack->at(ptr_outputStack->size()) = ptr_referenceForCore;
+        if (sizeof(ptr_outputStack) < 2)
+        {
+            SetFlag_OutputStackLoaded(false);
+        }
+        else
+        {
+            SetFlag_OutputStackLoaded(true);
+        }
     }
 
     bool Data_Control::GetFlag_InputStackLoaded()

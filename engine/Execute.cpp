@@ -4,10 +4,10 @@
 namespace Server_Library
 {
     class Execute_Control* Execute::ptr_Execute_Control = NULL;
-    class ConcurrentQue::LaunchConcurrency* Execute::ptr_LaunchConcurrency_ServerSide = NULL;
+    class ConcurrentQue::Framework_ConcurrentQue_Server* Execute::ptr_LaunchConcurrency_ServerSide = NULL;
     std::thread* Execute::ptr_Thread_WithCoreId[4] = { NULL, NULL, NULL, NULL };//NUMBER OF CORES
-    class WaitEnableWrite::WriteEnable* Execute::ptr_WriteEnable_Stack_InputPraise = NULL;
-    class WaitEnableWrite::WriteEnable* Execute::ptr_WriteEnable_Stack_OutputPraise = NULL;
+    class WaitEnableWrite::Framework_WriteEnable_Server_InputAction* Execute::ptr_WriteEnable_Stack_InputPraise = NULL;
+    class WaitEnableWrite::Framework_WriteEnable_Server_OutputRecieve* Execute::ptr_WriteEnable_Stack_OutputPraise = NULL;
 
     Execute::Execute(
         Global* ptr_Global,
@@ -16,17 +16,20 @@ namespace Server_Library
     {
         ptr_Execute_Control = NULL;
 
-        ptr_LaunchConcurrency_ServerSide = new class ConcurrentQue::LaunchConcurrency();
+        ptr_LaunchConcurrency_ServerSide = new class ConcurrentQue::Framework_ConcurrentQue_Server();
         while (ptr_LaunchConcurrency_ServerSide == NULL) { /* wait untill created */ }
-        ptr_LaunchConcurrency_ServerSide->Initialise_Control(ptr_LaunchConcurrency_ServerSide->Get_GlobalForLaunchConcurrency(), number_Implemented_Cores);
-
-        ptr_WriteEnable_Stack_InputPraise = new class WaitEnableWrite::WriteEnable();
+        ptr_LaunchConcurrency_ServerSide->Create_ConcurrentQue();
+        ptr_LaunchConcurrency_ServerSide->Get_LaunchConcurrency()->Initialise_Control(ptr_LaunchConcurrency_ServerSide->Get_LaunchConcurrency()->Get_GlobalForLaunchConcurrency(), number_Implemented_Cores);
+               
+        ptr_WriteEnable_Stack_InputPraise = new class WaitEnableWrite::Framework_WriteEnable_Server_InputAction();
         while (ptr_WriteEnable_Stack_InputPraise == NULL) { /* wait untill created */ }
-        ptr_WriteEnable_Stack_InputPraise->Initialise_Control(ptr_WriteEnable_Stack_InputPraise->Get_GlobalForWriteControl());
+        ptr_WriteEnable_Stack_InputPraise->Create_WriteEnable();
+        ptr_WriteEnable_Stack_InputPraise->Get_WriteEnable()->Initialise_Control(ptr_WriteEnable_Stack_InputPraise->Get_WriteEnable()->Get_GlobalForWriteControl());
 
-        ptr_WriteEnable_Stack_OutputPraise = new class WaitEnableWrite::WriteEnable();
+        ptr_WriteEnable_Stack_OutputPraise = new class WaitEnableWrite::Framework_WriteEnable_Server_OutputRecieve();
         while (ptr_WriteEnable_Stack_OutputPraise == NULL) { /* wait untill created */ }
-        ptr_WriteEnable_Stack_OutputPraise->Initialise_Control(ptr_WriteEnable_Stack_OutputPraise->Get_GlobalForWriteControl());
+        ptr_WriteEnable_Stack_OutputPraise->Create_WriteEnable();
+        ptr_WriteEnable_Stack_OutputPraise->Get_WriteEnable()->Initialise_Control(ptr_WriteEnable_Stack_OutputPraise->Get_WriteEnable()->Get_GlobalForWriteControl());
     }
 
     Execute::~Execute()
@@ -59,12 +62,6 @@ namespace Server_Library
 
     void Execute::Initialise_Threads()
     {
-        ptr_Thread_WithCoreId[0] = new std::thread(
-            Server_Library::Framework_Server::Get_HostServer()->Get_Algorithms()->Get_ListenRespond()->Thread_IO_ListenDistribute,
-            unsigned char(0),
-            Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores()
-        );
-
         for (unsigned char coreId = 1; coreId < Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores(); coreId++)
         {
             ptr_Thread_WithCoreId[coreId] = new std::thread(
@@ -72,7 +69,10 @@ namespace Server_Library
                 unsigned char(coreId),
                 Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores()
             );
+            while (ptr_Thread_WithCoreId[coreId] == NULL) { /* wait untill created */ }
+            Server_Library::Framework_Server::Get_HostServer()->Get_Execute()->Get_Execute_Control()->SetConditionCodeOfThisThreadedCore(coreId);
         }
+
         while (Server_Library::Framework_Server::Get_HostServer()->Get_Execute()->Get_Execute_Control()->GetFlag_SystemInitialised(Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores()) != false)
         {
 
@@ -84,17 +84,17 @@ namespace Server_Library
         return ptr_Execute_Control;
     }
 
-    class ConcurrentQue::LaunchConcurrency* Execute::Get_LaunchConcurrency_ServerSide()
+    class ConcurrentQue::Framework_ConcurrentQue_Server* Execute::Get_LaunchConcurrency_ServerSide()
     {
         return ptr_LaunchConcurrency_ServerSide;
     }
 
-    class WaitEnableWrite::WriteEnable* Execute::Get_WriteEnable_Stack_InputPraise()
+    class WaitEnableWrite::Framework_WriteEnable_Server_InputAction* Execute::Get_WriteEnable_Stack_InputPraise()
     {
         return ptr_WriteEnable_Stack_InputPraise;
     }
 
-    class WaitEnableWrite::WriteEnable* Execute::Get_WriteEnable_Stack_OutputPraise()
+    class WaitEnableWrite::Framework_WriteEnable_Server_OutputRecieve* Execute::Get_WriteEnable_Stack_OutputPraise()
     {
         return ptr_WriteEnable_Stack_OutputPraise;
     }

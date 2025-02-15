@@ -1,11 +1,10 @@
 #include "Praise1_Output.h"
+#include <cstddef>
 
 namespace Server_Library
 {
-	double Praise1_Output::_position[3];
-	double Praise1_Output::_front[3];
-	double Praise1_Output::_up[3];
-	double Praise1_Output::_right[3];
+	float Praise1_Output::_pitch;
+	float Praise1_Output::_yaw;
 
 	Praise1_Output::Praise1_Output()
 	{
@@ -14,8 +13,21 @@ namespace Server_Library
 
 	Praise1_Output::~Praise1_Output()
 	{
-
 	}
-
-	
+	float Praise1_Output::GetPitch()
+	{
+		return _pitch;
+	}
+	float Praise1_Output::GetYaw()
+	{
+		return _yaw;
+	}
+	void Praise1_Output::SetPitch(float value)
+	{
+		_pitch = value;
+	}
+	void Praise1_Output::SetYaw(float value)
+	{
+		_yaw = value;
+	}
 }

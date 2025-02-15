@@ -10,33 +10,21 @@ namespace Server_Library
     public:
         Data_Control();
         virtual ~Data_Control();
-        void PopFromStackOfInputPraises(
-            class Input* referenceForCore,
-            std::vector<class Input*>* ptr_inputStack
-        );
-        void PopFromStackOfOutput(
-            class Output* distributeBuffer,
-            std::vector<class Output*>* ptr_outputStack
-        );
-        void PushToStackOfInputPraises(
-            std::vector<class Input*>* ptr_InputStack,
-            class Input* ptr_Buffer_Praise
-        );
-        void PushToStackOfOutput(
-            std::vector<class Output*>* ptr_outputStack,
-            class Output* ptr_referenceForCore
-        );
+        void Pop_Stack_InputPraises(__int8 concurrentCoreId);
+        void Pop_Stack_Output();
+        void Push_Stack_InputPraises();
+        void Push_Stack_Output(__int8 concurrentCoreId);
 
         bool GetFlag_InputStackLoaded();
         bool GetFlag_OutputStackLoaded();
-
-        void SetFlag_InputStackLoaded(bool value);
-        void SetFlag_OutputStackLoaded(bool value);
 
     protected:
 
     private:
         static bool flag_isLoaded_Stack_InputPraise;
         static bool flag_isLoaded_Stack_OutputPraise;
+
+        void SetFlag_InputStackLoaded(bool value);
+        void SetFlag_OutputStackLoaded(bool value);
     };
 }

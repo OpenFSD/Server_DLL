@@ -44,10 +44,6 @@ namespace Server_Library
 
     void Algorithms::Initialise(unsigned char number_Implemented_Cores)
     {
-        ptr_ListenRespond = new class Server_Library::ListenRespond();
-        while (ptr_ListenRespond == NULL) { /* wait untill created */ }
-        ptr_ListenRespond->Initialise_Control();
-
         ptr_New_Concurrent = new class Server_Library::Concurrent();
         while(ptr_New_Concurrent == NULL) { /* wait untill created */ }
         ptr_New_Concurrent->Initialise_Control();

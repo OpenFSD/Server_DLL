@@ -18,6 +18,88 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="engine\Algorithms.cpp" />
+    <ClCompile Include="engine\Concurrent.cpp" />
+    <ClCompile Include="engine\Concurrent_Control.cpp" />
+    <ClCompile Include="engine\concurrent_que\Framework_ConcurrentQue_Server.cpp" />
+    <ClCompile Include="engine\concurrent_que\Global_ConcurrentQue_Server.cpp" />
+    <ClCompile Include="engine\concurrent_que\LaunchConcurrency_Control_Server.cpp" />
+    <ClCompile Include="engine\concurrent_que\LaunchConcurrency_Server.cpp" />
+    <ClCompile Include="engine\Data.cpp" />
+    <ClCompile Include="engine\Data_Control.cpp" />
+    <ClCompile Include="engine\Execute.cpp" />
+    <ClCompile Include="engine\Execute_Control.cpp" />
+    <ClCompile Include="engine\Framework_Server.cpp" />
+    <ClCompile Include="engine\Global.cpp" />
+    <ClCompile Include="engine\Input.cpp" />
+    <ClCompile Include="engine\Input_Control.cpp" />
+    <ClCompile Include="engine\Output.cpp" />
+    <ClCompile Include="engine\Output_Control.cpp" />
+    <ClCompile Include="engine\Server.cpp" />
+    <ClCompile Include="engine\user_praise_files\Praise0_Algorithm.cpp" />
+    <ClCompile Include="engine\user_praise_files\Praise0_Input.cpp" />
+    <ClCompile Include="engine\user_praise_files\Praise0_Output.cpp" />
+    <ClCompile Include="engine\user_praise_files\Praise1_Algorithm.cpp" />
+    <ClCompile Include="engine\user_praise_files\Praise1_Input.cpp" />
+    <ClCompile Include="engine\user_praise_files\Praise1_Output.cpp" />
+    <ClCompile Include="engine\user_praise_files\Praise2_Algorithm.cpp" />
+    <ClCompile Include="engine\user_praise_files\Praise2_Input.cpp" />
+    <ClCompile Include="engine\user_praise_files\Praise2_Output.cpp" />
+    <ClCompile Include="engine\user_praise_files\User_Alg.cpp" />
+    <ClCompile Include="engine\user_praise_files\User_I.cpp" />
+    <ClCompile Include="engine\user_praise_files\User_O.cpp" />
+    <ClCompile Include="engine\write_enable\Framework_WriteEnable_Server_InputAction.cpp" />
+    <ClCompile Include="engine\write_enable\Framework_WriteEnable_Server_OutputRecieve.cpp" />
+    <ClCompile Include="engine\write_enable\Global_WriteEnable_Server_InputAction.cpp" />
+    <ClCompile Include="engine\write_enable\Global_WriteEnable_Server_OutputRecieve.cpp" />
+    <ClCompile Include="engine\write_enable\WriteEnable_Control_Server_InputAction.cpp" />
+    <ClCompile Include="engine\write_enable\WriteEnable_Control_Server_OutputRecieve.cpp" />
+    <ClCompile Include="engine\write_enable\WriteEnable_Server_InputAction.cpp" />
+    <ClCompile Include="engine\write_enable\WriteEnable_Server_OutputRecieve.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="engine\Algorithms.h" />
+    <ClInclude Include="engine\Concurrent.h" />
+    <ClInclude Include="engine\Concurrent_Control.h" />
+    <ClInclude Include="engine\concurrent_que\Framework_ConcurrentQue_Server.h" />
+    <ClInclude Include="engine\concurrent_que\Global_ConcurrentQue_Server.h" />
+    <ClInclude Include="engine\concurrent_que\LaunchConcurrency_Control_Server.h" />
+    <ClInclude Include="engine\concurrent_que\LaunchConcurrency_Server.h" />
+    <ClInclude Include="engine\Data.h" />
+    <ClInclude Include="engine\Data_Control.h" />
+    <ClInclude Include="engine\Execute.h" />
+    <ClInclude Include="engine\Execute_Control.h" />
+    <ClInclude Include="engine\Framework_Server.h" />
+    <ClInclude Include="engine\Global.h" />
+    <ClInclude Include="engine\Input.h" />
+    <ClInclude Include="engine\Input_Control.h" />
+    <ClInclude Include="engine\Thread_Input_Listen.h" />
+    <ClInclude Include="engine\Thread_Input_Listen_Control.h" />
+    <ClInclude Include="engine\Output.h" />
+    <ClInclude Include="engine\Output_Control.h" />
+    <ClInclude Include="engine\Server.h" />
+    <ClInclude Include="engine\user_praise_files\Praise0_Algorithm.h" />
+    <ClInclude Include="engine\user_praise_files\Praise0_Input.h" />
+    <ClInclude Include="engine\user_praise_files\Praise0_Output.h" />
+    <ClInclude Include="engine\user_praise_files\Praise1_Algorithm.h" />
+    <ClInclude Include="engine\user_praise_files\Praise1_Input.h" />
+    <ClInclude Include="engine\user_praise_files\Praise1_Output.h" />
+    <ClInclude Include="engine\user_praise_files\Praise2_Algorithm.h" />
+    <ClInclude Include="engine\user_praise_files\Praise2_Input.h" />
+    <ClInclude Include="engine\user_praise_files\Praise2_Output.h" />
+    <ClInclude Include="engine\user_praise_files\User_Alg.h" />
+    <ClInclude Include="engine\user_praise_files\User_I.h" />
+    <ClInclude Include="engine\user_praise_files\User_O.h" />
+    <ClInclude Include="engine\write_enable\Framework_WriteEnable_Server_InputAction.h" />
+    <ClInclude Include="engine\write_enable\Framework_WriteEnable_Server_OutputRecieve.h" />
+    <ClInclude Include="engine\write_enable\Global_WriteEnable_Server_InputAction.h" />
+    <ClInclude Include="engine\write_enable\Global_WriteEnable_Server_OutputRecieve.h" />
+    <ClInclude Include="engine\write_enable\WriteEnable_Control_Server_InputAction.h" />
+    <ClInclude Include="engine\write_enable\WriteEnable_Control_Server_OutputRecieve.h" />
+    <ClInclude Include="engine\write_enable\WriteEnable_Server_InputAction.h" />
+    <ClInclude Include="engine\write_enable\WriteEnable_Server_OutputRecieve.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -130,77 +212,6 @@
       <EnableUAC>false</EnableUAC>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="engine\Algorithms.cpp" />
-    <ClCompile Include="engine\Concurrent.cpp" />
-    <ClCompile Include="engine\Concurrent_Control.cpp" />
-    <ClCompile Include="engine\Data.cpp" />
-    <ClCompile Include="engine\Data_Control.cpp" />
-    <ClCompile Include="engine\Execute.cpp" />
-    <ClCompile Include="engine\Execute_Control.cpp" />
-    <ClCompile Include="engine\Framework_Server.cpp" />
-    <ClCompile Include="engine\Global.cpp" />
-    <ClCompile Include="engine\Input.cpp" />
-    <ClCompile Include="engine\Input_Control.cpp" />
-    <ClCompile Include="engine\ListenRespond.cpp" />
-    <ClCompile Include="engine\ListenRespond_Control.cpp" />
-    <ClCompile Include="engine\Output.cpp" />
-    <ClCompile Include="engine\Output_Control.cpp" />
-    <ClCompile Include="engine\Server.cpp" />
-    <ClCompile Include="engine\user_praise_files\Praise0_Algorithm.cpp" />
-    <ClCompile Include="engine\user_praise_files\Praise0_Input.cpp" />
-    <ClCompile Include="engine\user_praise_files\Praise0_Output.cpp" />
-    <ClCompile Include="engine\user_praise_files\Praise1_Algorithm.cpp" />
-    <ClCompile Include="engine\user_praise_files\Praise1_Input.cpp" />
-    <ClCompile Include="engine\user_praise_files\Praise1_Output.cpp" />
-    <ClCompile Include="engine\user_praise_files\User_Alg.cpp" />
-    <ClCompile Include="engine\user_praise_files\User_I.cpp" />
-    <ClCompile Include="engine\user_praise_files\User_O.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="engine\Algorithms.h" />
-    <ClInclude Include="engine\Concurrent.h" />
-    <ClInclude Include="engine\Concurrent_Control.h" />
-    <ClInclude Include="engine\Data.h" />
-    <ClInclude Include="engine\Data_Control.h" />
-    <ClInclude Include="engine\Execute.h" />
-    <ClInclude Include="engine\Execute_Control.h" />
-    <ClInclude Include="engine\Framework_Server.h" />
-    <ClInclude Include="engine\Global.h" />
-    <ClInclude Include="engine\Input.h" />
-    <ClInclude Include="engine\Input_Control.h" />
-    <ClInclude Include="engine\ListenRespond.h" />
-    <ClInclude Include="engine\ListenRespond_Control.h" />
-    <ClInclude Include="engine\Output.h" />
-    <ClInclude Include="engine\Output_Control.h" />
-    <ClInclude Include="engine\Server.h" />
-    <ClInclude Include="engine\user_praise_files\Praise0_Algorithm.h" />
-    <ClInclude Include="engine\user_praise_files\Praise0_Input.h" />
-    <ClInclude Include="engine\user_praise_files\Praise0_Output.h" />
-    <ClInclude Include="engine\user_praise_files\Praise1_Algorithm.h" />
-    <ClInclude Include="engine\user_praise_files\Praise1_Input.h" />
-    <ClInclude Include="engine\user_praise_files\Praise1_Output.h" />
-    <ClInclude Include="engine\user_praise_files\User_Alg.h" />
-    <ClInclude Include="engine\user_praise_files\User_I.h" />
-    <ClInclude Include="engine\user_praise_files\User_O.h" />
-    <ClInclude Include="include\concurrent_que\Framework_ConcurrentQue.h" />
-    <ClInclude Include="include\concurrent_que\Global_ConcurrentQue.h" />
-    <ClInclude Include="include\concurrent_que\LaunchConcurrency.h" />
-    <ClInclude Include="include\concurrent_que\LaunchConcurrency_Control.h" />
-    <ClInclude Include="include\write_enable\Framework_WriteEnable.h" />
-    <ClInclude Include="include\write_enable\Global_WriteEnable.h" />
-    <ClInclude Include="include\write_enable\WriteEnable.h" />
-    <ClInclude Include="include\write_enable\WriteEnable_Control.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\abseil_dll.dll" />
-    <None Include="bin\GameNetworkingSockets.dll" />
-    <None Include="bin\libcrypto-3.dll" />
-    <None Include="bin\libprotobufd.dll" />
-    <None Include="bin\WaitLaunch_Server_ConcurrentThread.dll" />
-    <None Include="bin\WriteEnable_Stack_InputPraise.dll" />
-    <None Include="bin\WriteEnable_Stack_OutputPraise.dll" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

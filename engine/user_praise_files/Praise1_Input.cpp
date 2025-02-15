@@ -2,9 +2,8 @@
 
 namespace Server_Library
 {
-	double Praise1_Input::_player_position_X;
-	double Praise1_Input::_player_position_Y;
-	double Praise1_Input::_player_position_Z;
+	__int16 Praise1_Input::mouse_X;
+	__int16 Praise1_Input::mouse_Y;
 
 	Praise1_Input::Praise1_Input()
 	{
@@ -13,32 +12,21 @@ namespace Server_Library
 
 	Praise1_Input::~Praise1_Input()
 	{
-
 	}
-
-	double Praise1_Input::GetPlayer_Position_X()
+	__int16 Praise1_Input::Get_mouse_X()
 	{
-		return _player_position_X;
+		return mouse_X;
 	}
-	double Praise1_Input::GetPlayer_Position_Y()
+	__int16 Praise1_Input::Get_mouse_Y()
 	{
-		return _player_position_Y;
+		return mouse_Y;
 	}
-	double Praise1_Input::GetPlayer_Position_Z()
+	void Praise1_Input::Set_mouse_X(__int16 value)
 	{
-		return _player_position_Z;
+		mouse_X = value;
 	}
-
-	void Praise1_Input::SetPlayer_Positiion_X(double value)
+	void Praise1_Input::Set_mouse_Y(__int16 value)
 	{
-		_player_position_X = value;
-	}
-	void Praise1_Input::SetPlayer_Positiion_Y(double value)
-	{
-		_player_position_Y = value;
-	}
-	void Praise1_Input::SetPlayer_Positiion_Z(double value)
-	{
-		_player_position_Z = value;
+		mouse_Y = value;
 	}
 }

@@ -4,6 +4,13 @@
 #include "user_praise_files\\Praise0_Algorithm.h"
 #include "user_praise_files\\Praise0_Input.h"
 #include "user_praise_files\\Praise0_Output.h"
+#include "user_praise_files\\Praise1_Algorithm.h"
+#include "user_praise_files\\Praise1_Input.h"
+#include "user_praise_files\\Praise1_Output.h"
+#include "user_praise_files\\Praise2_Algorithm.h"
+#include "user_praise_files\\Praise2_Input.h"
+#include "user_praise_files\\Praise2_Output.h"
+
 
 namespace Server_Library
 {
@@ -15,7 +22,7 @@ namespace Server_Library
 
         void Initialise_Control();
         static void Thread_Concurrency(
-            unsigned char concurrent_coreId,
+            __int8 concurrent_coreId,
             unsigned char number_Implemented_Cores
         );
         void Do_Concurrent_Algorithm_For_PraiseEventId(

@@ -19,18 +19,13 @@ namespace Server_Library
 	{
 		switch (ptr_praiseEventId)
 		{
-//===
-//===	
 		case 0:
-			class Object* obj = (class Object*)Server_Library::Framework_Server::Get_HostServer()->Get_Algorithms()->Get_User_Algorithms()->Get_Praise0_Algorithm();
-			//Server_Library::Framework_Server::Get_HostServer()->Get_Algorithms()->Get_Concurren_Array(int(concurrent_coreId))->Set_Algorithm_Subset(obj);
+			//class Object* obj_praise0 = (class Object*)Server_Library::Framework_Server::Get_HostServer()->Get_Algorithms()->Get_User_Algorithms()->Get_Praise0_Algorithm();
 			break;
 
 		case 1:
-			//TODO for each praise
+			//class Object* obj_praise1 = (class Object*)Server_Library::Framework_Server::Get_HostServer()->Get_Algorithms()->Get_User_Algorithms()->Get_Praise1_Algorithm();
 			break;
-//===
-//===	
 		}
 	}
 }

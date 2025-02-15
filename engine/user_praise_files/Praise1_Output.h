@@ -8,13 +8,16 @@ namespace Server_Library
 		Praise1_Output();
 		virtual ~Praise1_Output();
 
+		float GetPitch();
+		float GetYaw();
+
+		void SetPitch(float value);
+		void SetYaw(float value);
 
 	protected:
 
 	private:
-		static double _position[3];
-		static double _front[3];
-		static double _up[3];
-		static double _right[3];
+		static float _pitch;
+		static float _yaw;
 	};
 }

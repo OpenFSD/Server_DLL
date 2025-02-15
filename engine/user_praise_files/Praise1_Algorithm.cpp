@@ -16,6 +16,6 @@ namespace Server_Library
         class Server_Library::Praise1_Output* ptr_Out_SubSet
     )
     {
-
+        
     }
 }

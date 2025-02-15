@@ -45,7 +45,7 @@ namespace Server_Library
             ptr_Buffer_OututDouble[index] = new Output();
             while (ptr_Buffer_OututDouble[index] == NULL) { /* wait untill created */ }
         }
-        for (__int8 index = 0; index < (Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores() - 1); index++)
+        for (__int8 index = 0; index < (4 - 1); index++)//Number Of Cores
         {
             ptr_Buffer_InputReference_ForCore[index] = new Input();
             while (ptr_Buffer_InputReference_ForCore[index] == NULL) { /* wait untill created */ }

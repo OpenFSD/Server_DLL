@@ -48,12 +48,6 @@
     <ClCompile Include="engine\Input_Control.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\ListenRespond.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\ListenRespond_Control.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="engine\Output.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -61,6 +55,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\Server.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\concurrent_que\Framework_ConcurrentQue_Server.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\concurrent_que\Global_ConcurrentQue_Server.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\concurrent_que\LaunchConcurrency_Control_Server.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\concurrent_que\LaunchConcurrency_Server.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\user_praise_files\Praise0_Algorithm.cpp">
@@ -81,6 +87,15 @@
     <ClCompile Include="engine\user_praise_files\Praise1_Output.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="engine\user_praise_files\Praise2_Algorithm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\user_praise_files\Praise2_Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\user_praise_files\Praise2_Output.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="engine\user_praise_files\User_Alg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -88,6 +103,30 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\user_praise_files\User_O.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\write_enable\Framework_WriteEnable_Server_InputAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\write_enable\Framework_WriteEnable_Server_OutputRecieve.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\write_enable\Global_WriteEnable_Server_InputAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\write_enable\Global_WriteEnable_Server_OutputRecieve.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\write_enable\WriteEnable_Control_Server_InputAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\write_enable\WriteEnable_Control_Server_OutputRecieve.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\write_enable\WriteEnable_Server_InputAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\write_enable\WriteEnable_Server_OutputRecieve.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -125,10 +164,10 @@
     <ClInclude Include="engine\Input_Control.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\ListenRespond.h">
+    <ClInclude Include="engine\Thread_Input_Listen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\ListenRespond_Control.h">
+    <ClInclude Include="engine\Thread_Input_Listen_Control.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\Output.h">
@@ -138,6 +177,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\Server.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\concurrent_que\Framework_ConcurrentQue_Server.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\concurrent_que\Global_ConcurrentQue_Server.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\concurrent_que\LaunchConcurrency_Control_Server.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\concurrent_que\LaunchConcurrency_Server.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\user_praise_files\Praise0_Algorithm.h">
@@ -158,6 +209,15 @@
     <ClInclude Include="engine\user_praise_files\Praise1_Output.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\user_praise_files\Praise2_Algorithm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\user_praise_files\Praise2_Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\user_praise_files\Praise2_Output.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="engine\user_praise_files\User_Alg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -167,38 +227,29 @@
     <ClInclude Include="engine\user_praise_files\User_O.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\concurrent_que\Framework_ConcurrentQue.h">
+    <ClInclude Include="engine\write_enable\Framework_WriteEnable_Server_InputAction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\concurrent_que\Global_ConcurrentQue.h">
+    <ClInclude Include="engine\write_enable\Framework_WriteEnable_Server_OutputRecieve.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\concurrent_que\LaunchConcurrency.h">
+    <ClInclude Include="engine\write_enable\Global_WriteEnable_Server_InputAction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\concurrent_que\LaunchConcurrency_Control.h">
+    <ClInclude Include="engine\write_enable\Global_WriteEnable_Server_OutputRecieve.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\write_enable\Framework_WriteEnable.h">
+    <ClInclude Include="engine\write_enable\WriteEnable_Control_Server_InputAction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\write_enable\Global_WriteEnable.h">
+    <ClInclude Include="engine\write_enable\WriteEnable_Control_Server_OutputRecieve.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\write_enable\WriteEnable.h">
+    <ClInclude Include="engine\write_enable\WriteEnable_Server_InputAction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\write_enable\WriteEnable_Control.h">
+    <ClInclude Include="engine\write_enable\WriteEnable_Server_OutputRecieve.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\abseil_dll.dll" />
-    <None Include="bin\GameNetworkingSockets.dll" />
-    <None Include="bin\libcrypto-3.dll" />
-    <None Include="bin\libprotobufd.dll" />
-    <None Include="bin\WaitLaunch_Server_ConcurrentThread.dll" />
-    <None Include="bin\WriteEnable_Stack_InputPraise.dll" />
-    <None Include="bin\WriteEnable_Stack_OutputPraise.dll" />
   </ItemGroup>
 </Project>

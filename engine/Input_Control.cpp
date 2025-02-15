@@ -15,26 +15,27 @@ namespace Server_Library
 
     void Input_Control::LoadValuesInToInputSubset(unsigned char concurrent_CoreId, int* praiseEventId)
     {
-        class Object* subSet_BackBuffer = NULL; 
-        class Object* subSet_ThirdBuffer = NULL;
-
         switch (*praiseEventId)
         {
-            case 0: {
-                Praise0_Input* subSet_ThirdBuffer = reinterpret_cast <class Praise0_Input*>(Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_InputRefferenceOfCore(concurrent_CoreId)->Get_InputBufferSubset());
-                Praise0_Input* subSet_BackBuffer = reinterpret_cast <class Praise0_Input*>(Server_Library::Framework_Server::Get_HostServer()->Get_Data()->GetBuffer_InputBackDouble()->Get_InputBufferSubset());
-                subSet_ThirdBuffer->Set_mouse_X(subSet_BackBuffer->Get_mouse_X());
-                subSet_ThirdBuffer->Set_mouse_Y(subSet_BackBuffer->Get_mouse_Y());
-                break;
-            }
-            case 1: {
-                Praise1_Input* subSet_ThirdBuffer = reinterpret_cast <class Praise1_Input*>(Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_InputRefferenceOfCore(concurrent_CoreId)->Get_InputBufferSubset());
-                Praise1_Input* subSet_BackBuffer = reinterpret_cast <class Praise1_Input*>(Server_Library::Framework_Server::Get_HostServer()->Get_Data()->GetBuffer_InputBackDouble()->Get_InputBufferSubset());
-                subSet_ThirdBuffer->SetPlayer_Positiion_X(subSet_BackBuffer->GetPlayer_Position_X());
-                subSet_ThirdBuffer->SetPlayer_Positiion_Y(subSet_BackBuffer->GetPlayer_Position_Y());
-                subSet_ThirdBuffer->SetPlayer_Positiion_Z(subSet_BackBuffer->GetPlayer_Position_Z());
-                break;
-            }
+        case 0: {
+
+            break;
+        }
+        case 1: {
+            Server_Library::Praise1_Input* subSet_ThirdBuffer = reinterpret_cast <class Praise1_Input*>(Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_InputRefferenceOfCore(concurrent_CoreId)->Get_InputBufferSubset());
+            Server_Library::Praise1_Input* subSet_BackBuffer = reinterpret_cast <class Praise1_Input*>(Server_Library::Framework_Server::Get_HostServer()->Get_Data()->GetBuffer_InputBackDouble()->Get_InputBufferSubset());
+            subSet_ThirdBuffer->Set_mouse_X(subSet_BackBuffer->Get_mouse_X());
+            subSet_ThirdBuffer->Set_mouse_Y(subSet_BackBuffer->Get_mouse_Y());
+            break;
+        }
+        case 2: {
+            Server_Library::Praise2_Input* subSet_ThirdBuffer = reinterpret_cast <class Praise2_Input*>(Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_InputRefferenceOfCore(concurrent_CoreId)->Get_InputBufferSubset());
+            Server_Library::Praise2_Input* subSet_BackBuffer = reinterpret_cast <class Praise2_Input*>(Server_Library::Framework_Server::Get_HostServer()->Get_Data()->GetBuffer_InputBackDouble()->Get_InputBufferSubset());
+            subSet_ThirdBuffer->SetPlayer_Position_X(subSet_BackBuffer->GetPlayer_Position_X());
+            subSet_ThirdBuffer->SetPlayer_Position_Y(subSet_BackBuffer->GetPlayer_Position_Y());
+            subSet_ThirdBuffer->SetPlayer_Position_Z(subSet_BackBuffer->GetPlayer_Position_Z());
+            break;
+        }
         }
     }
 
