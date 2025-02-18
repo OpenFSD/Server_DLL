@@ -57,16 +57,16 @@
     <ClCompile Include="engine\Server.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\concurrent_que\Framework_ConcurrentQue_Server.cpp">
+    <ClCompile Include="engine\concurrent_que\ConcurrentQue_Server_Framework.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\concurrent_que\Global_ConcurrentQue_Server.cpp">
+    <ClCompile Include="engine\concurrent_que\ConcurrentQue_Server_Global.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\concurrent_que\LaunchConcurrency_Control_Server.cpp">
+    <ClCompile Include="engine\concurrent_que\ConcurrentQue_Server_LaunchConcurrency_Control.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\concurrent_que\LaunchConcurrency_Server.cpp">
+    <ClCompile Include="engine\concurrent_que\ConcurrentQue_Server_LaunchConcurrency.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\user_praise_files\Praise0_Algorithm.cpp">
@@ -105,28 +105,28 @@
     <ClCompile Include="engine\user_praise_files\User_O.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\write_enable\Framework_WriteEnable_Server_InputAction.cpp">
+    <ClCompile Include="engine\write_enable\WriteEnable_Stack_Server_InputAction_Framework.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\write_enable\Framework_WriteEnable_Server_OutputRecieve.cpp">
+    <ClCompile Include="engine\write_enable\WriteEnable_Stack_Server_OutputRecieve_Framework.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\write_enable\Global_WriteEnable_Server_InputAction.cpp">
+    <ClCompile Include="engine\write_enable\WriteEnable_Stack_Server_InputAction_Global.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\write_enable\Global_WriteEnable_Server_OutputRecieve.cpp">
+    <ClCompile Include="engine\write_enable\WriteEnable_Stack_Server_OutputRecieve_Global.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\write_enable\WriteEnable_Control_Server_InputAction.cpp">
+    <ClCompile Include="engine\write_enable\WriteEnable_Stack_Server_InputAction_Control.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\write_enable\WriteEnable_Control_Server_OutputRecieve.cpp">
+    <ClCompile Include="engine\write_enable\WriteEnable_Stack_Server_OutputRecieve_Control.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\write_enable\WriteEnable_Server_InputAction.cpp">
+    <ClCompile Include="engine\write_enable\WriteEnable_Stack_Server_InputAction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\write_enable\WriteEnable_Server_OutputRecieve.cpp">
+    <ClCompile Include="engine\write_enable\WriteEnable_Stack_Server_OutputRecieve.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -164,12 +164,6 @@
     <ClInclude Include="engine\Input_Control.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\Thread_Input_Listen.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\Thread_Input_Listen_Control.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="engine\Output.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -179,16 +173,16 @@
     <ClInclude Include="engine\Server.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\concurrent_que\Framework_ConcurrentQue_Server.h">
+    <ClInclude Include="engine\concurrent_que\ConcurrentQue_Server_Framework.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\concurrent_que\Global_ConcurrentQue_Server.h">
+    <ClInclude Include="engine\concurrent_que\ConcurrentQue_Server_Global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\concurrent_que\LaunchConcurrency_Control_Server.h">
+    <ClInclude Include="engine\concurrent_que\ConcurrentQue_Server_LaunchConcurrency_Control.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\concurrent_que\LaunchConcurrency_Server.h">
+    <ClInclude Include="engine\concurrent_que\ConcurrentQue_Server_LaunchConcurrency.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\user_praise_files\Praise0_Algorithm.h">
@@ -227,28 +221,28 @@
     <ClInclude Include="engine\user_praise_files\User_O.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\write_enable\Framework_WriteEnable_Server_InputAction.h">
+    <ClInclude Include="engine\write_enable\WriteEnable_Stack_Server_InputAction_Framework.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\write_enable\Framework_WriteEnable_Server_OutputRecieve.h">
+    <ClInclude Include="engine\write_enable\WriteEnable_Stack_Server_OutputRecieve_Framework.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\write_enable\Global_WriteEnable_Server_InputAction.h">
+    <ClInclude Include="engine\write_enable\WriteEnable_Stack_Server_InputAction_Global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\write_enable\Global_WriteEnable_Server_OutputRecieve.h">
+    <ClInclude Include="engine\write_enable\WriteEnable_Stack_Server_OutputRecieve_Global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\write_enable\WriteEnable_Control_Server_InputAction.h">
+    <ClInclude Include="engine\write_enable\WriteEnable_Stack_Server_InputAction_Control.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\write_enable\WriteEnable_Control_Server_OutputRecieve.h">
+    <ClInclude Include="engine\write_enable\WriteEnable_Stack_Server_OutputRecieve_Control.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\write_enable\WriteEnable_Server_InputAction.h">
+    <ClInclude Include="engine\write_enable\WriteEnable_Stack_Server_InputAction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\write_enable\WriteEnable_Server_OutputRecieve.h">
+    <ClInclude Include="engine\write_enable\WriteEnable_Stack_Server_OutputRecieve.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -22,10 +22,10 @@
     <ClCompile Include="engine\Algorithms.cpp" />
     <ClCompile Include="engine\Concurrent.cpp" />
     <ClCompile Include="engine\Concurrent_Control.cpp" />
-    <ClCompile Include="engine\concurrent_que\Framework_ConcurrentQue_Server.cpp" />
-    <ClCompile Include="engine\concurrent_que\Global_ConcurrentQue_Server.cpp" />
-    <ClCompile Include="engine\concurrent_que\LaunchConcurrency_Control_Server.cpp" />
-    <ClCompile Include="engine\concurrent_que\LaunchConcurrency_Server.cpp" />
+    <ClCompile Include="engine\concurrent_que\ConcurrentQue_Server_Framework.cpp" />
+    <ClCompile Include="engine\concurrent_que\ConcurrentQue_Server_Global.cpp" />
+    <ClCompile Include="engine\concurrent_que\ConcurrentQue_Server_LaunchConcurrency_Control.cpp" />
+    <ClCompile Include="engine\concurrent_que\ConcurrentQue_Server_LaunchConcurrency.cpp" />
     <ClCompile Include="engine\Data.cpp" />
     <ClCompile Include="engine\Data_Control.cpp" />
     <ClCompile Include="engine\Execute.cpp" />
@@ -49,23 +49,23 @@
     <ClCompile Include="engine\user_praise_files\User_Alg.cpp" />
     <ClCompile Include="engine\user_praise_files\User_I.cpp" />
     <ClCompile Include="engine\user_praise_files\User_O.cpp" />
-    <ClCompile Include="engine\write_enable\Framework_WriteEnable_Server_InputAction.cpp" />
-    <ClCompile Include="engine\write_enable\Framework_WriteEnable_Server_OutputRecieve.cpp" />
-    <ClCompile Include="engine\write_enable\Global_WriteEnable_Server_InputAction.cpp" />
-    <ClCompile Include="engine\write_enable\Global_WriteEnable_Server_OutputRecieve.cpp" />
-    <ClCompile Include="engine\write_enable\WriteEnable_Control_Server_InputAction.cpp" />
-    <ClCompile Include="engine\write_enable\WriteEnable_Control_Server_OutputRecieve.cpp" />
-    <ClCompile Include="engine\write_enable\WriteEnable_Server_InputAction.cpp" />
-    <ClCompile Include="engine\write_enable\WriteEnable_Server_OutputRecieve.cpp" />
+    <ClCompile Include="engine\write_enable\WriteEnable_Stack_Server_InputAction_Framework.cpp" />
+    <ClCompile Include="engine\write_enable\WriteEnable_Stack_Server_OutputRecieve_Framework.cpp" />
+    <ClCompile Include="engine\write_enable\WriteEnable_Stack_Server_InputAction_Global.cpp" />
+    <ClCompile Include="engine\write_enable\WriteEnable_Stack_Server_OutputRecieve_Global.cpp" />
+    <ClCompile Include="engine\write_enable\WriteEnable_Stack_Server_InputAction_Control.cpp" />
+    <ClCompile Include="engine\write_enable\WriteEnable_Stack_Server_OutputRecieve_Control.cpp" />
+    <ClCompile Include="engine\write_enable\WriteEnable_Stack_Server_InputAction.cpp" />
+    <ClCompile Include="engine\write_enable\WriteEnable_Stack_Server_OutputRecieve.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\Algorithms.h" />
     <ClInclude Include="engine\Concurrent.h" />
     <ClInclude Include="engine\Concurrent_Control.h" />
-    <ClInclude Include="engine\concurrent_que\Framework_ConcurrentQue_Server.h" />
-    <ClInclude Include="engine\concurrent_que\Global_ConcurrentQue_Server.h" />
-    <ClInclude Include="engine\concurrent_que\LaunchConcurrency_Control_Server.h" />
-    <ClInclude Include="engine\concurrent_que\LaunchConcurrency_Server.h" />
+    <ClInclude Include="engine\concurrent_que\ConcurrentQue_Server_Framework.h" />
+    <ClInclude Include="engine\concurrent_que\ConcurrentQue_Server_Global.h" />
+    <ClInclude Include="engine\concurrent_que\ConcurrentQue_Server_LaunchConcurrency_Control.h" />
+    <ClInclude Include="engine\concurrent_que\ConcurrentQue_Server_LaunchConcurrency.h" />
     <ClInclude Include="engine\Data.h" />
     <ClInclude Include="engine\Data_Control.h" />
     <ClInclude Include="engine\Execute.h" />
@@ -74,8 +74,6 @@
     <ClInclude Include="engine\Global.h" />
     <ClInclude Include="engine\Input.h" />
     <ClInclude Include="engine\Input_Control.h" />
-    <ClInclude Include="engine\Thread_Input_Listen.h" />
-    <ClInclude Include="engine\Thread_Input_Listen_Control.h" />
     <ClInclude Include="engine\Output.h" />
     <ClInclude Include="engine\Output_Control.h" />
     <ClInclude Include="engine\Server.h" />
@@ -91,14 +89,14 @@
     <ClInclude Include="engine\user_praise_files\User_Alg.h" />
     <ClInclude Include="engine\user_praise_files\User_I.h" />
     <ClInclude Include="engine\user_praise_files\User_O.h" />
-    <ClInclude Include="engine\write_enable\Framework_WriteEnable_Server_InputAction.h" />
-    <ClInclude Include="engine\write_enable\Framework_WriteEnable_Server_OutputRecieve.h" />
-    <ClInclude Include="engine\write_enable\Global_WriteEnable_Server_InputAction.h" />
-    <ClInclude Include="engine\write_enable\Global_WriteEnable_Server_OutputRecieve.h" />
-    <ClInclude Include="engine\write_enable\WriteEnable_Control_Server_InputAction.h" />
-    <ClInclude Include="engine\write_enable\WriteEnable_Control_Server_OutputRecieve.h" />
-    <ClInclude Include="engine\write_enable\WriteEnable_Server_InputAction.h" />
-    <ClInclude Include="engine\write_enable\WriteEnable_Server_OutputRecieve.h" />
+    <ClInclude Include="engine\write_enable\WriteEnable_Stack_Server_InputAction_Framework.h" />
+    <ClInclude Include="engine\write_enable\WriteEnable_Stack_Server_OutputRecieve_Framework.h" />
+    <ClInclude Include="engine\write_enable\WriteEnable_Stack_Server_InputAction_Global.h" />
+    <ClInclude Include="engine\write_enable\WriteEnable_Stack_Server_OutputRecieve_Global.h" />
+    <ClInclude Include="engine\write_enable\WriteEnable_Stack_Server_InputAction_Control.h" />
+    <ClInclude Include="engine\write_enable\WriteEnable_Stack_Server_OutputRecieve_Control.h" />
+    <ClInclude Include="engine\write_enable\WriteEnable_Stack_Server_InputAction.h" />
+    <ClInclude Include="engine\write_enable\WriteEnable_Stack_Server_OutputRecieve.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
