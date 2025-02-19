@@ -17,7 +17,7 @@ namespace ConcurrentQue
         delete ptr_LaunchConcurrency_Control;
     }
 
-    void ConcurrentQue_Server_LaunchConcurrency::Thread_Start(unsigned char concurrent_CoreId)
+    void ConcurrentQue_Server_LaunchConcurrency::Thread_Start(__int8 concurrent_CoreId)
     {
         class ConcurrentQue::ConcurrentQue_Server_LaunchConcurrency_Control* ptr_LaunchConcurrency_Control = ConcurrentQue::ConcurrentQue_Server_Framework::Get_LaunchConcurrency()->Get_Control_Of_LaunchConcurrency();
         class ConcurrentQue::ConcurrentQue_Server_Global* ptr_Global = ConcurrentQue::ConcurrentQue_Server_Framework::Get_LaunchConcurrency()->Get_GlobalForLaunchConcurrency();
@@ -32,14 +32,14 @@ namespace ConcurrentQue
 
     void ConcurrentQue_Server_LaunchConcurrency::Initialise_Control(
         class ConcurrentQue::ConcurrentQue_Server_Global* ptr_Global,
-        unsigned char ptr_MyNumImplementedCores
+        __int8 ptr_MyNumImplementedCores
     )
     {
         ptr_LaunchConcurrency_Control = new class ConcurrentQue::ConcurrentQue_Server_LaunchConcurrency_Control(ptr_Global, ptr_MyNumImplementedCores);
         while (ptr_LaunchConcurrency_Control == NULL) { /* wait untill created */ }
     }
 
-    void ConcurrentQue_Server_LaunchConcurrency::Thread_End(unsigned char concurrent_CoreId)
+    void ConcurrentQue_Server_LaunchConcurrency::Thread_End(__int8 concurrent_CoreId)
     {
         class ConcurrentQue::ConcurrentQue_Server_LaunchConcurrency_Control* ptr_LaunchConcurrency_Control = ConcurrentQue::ConcurrentQue_Server_Framework::Get_LaunchConcurrency()->Get_Control_Of_LaunchConcurrency();
         class ConcurrentQue::ConcurrentQue_Server_Global* ptr_Global = ConcurrentQue::ConcurrentQue_Server_Framework::Get_LaunchConcurrency()->Get_GlobalForLaunchConcurrency();

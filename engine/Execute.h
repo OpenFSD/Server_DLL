@@ -16,12 +16,12 @@ namespace Server_Library
     public:
         Execute(
             class Global* ptr_Global,
-            unsigned char number_Implemented_Cores
+            __int8 number_Implemented_Cores
         );
         virtual ~Execute();
         void Initialise();
         void Initialise_Control(
-            unsigned char number_Implemented_Cores,
+            __int8 number_Implemented_Cores,
             class Global* ptr_Global
         );
         void Initialise_Threads();

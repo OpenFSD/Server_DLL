@@ -15,11 +15,11 @@ namespace ConcurrentQue
 
 	}
 
-	void ConcurrentQue_Server_Framework::Request_Wait_Launch_ConcurrentThread(unsigned char concurrent_CoreId)
+	void ConcurrentQue_Server_Framework::Request_Wait_Launch_ConcurrentThread(__int8 concurrent_CoreId)
 	{
 		ConcurrentQue::ConcurrentQue_Server_Framework::Get_LaunchConcurrency()->Thread_Start(concurrent_CoreId);
 	}
-	void ConcurrentQue_Server_Framework::Concurrent_Thread_End(unsigned char concurrent_CoreId)
+	void ConcurrentQue_Server_Framework::Concurrent_Thread_End(__int8 concurrent_CoreId)
 	{
 		ConcurrentQue::ConcurrentQue_Server_Framework::Get_LaunchConcurrency()->Thread_End(concurrent_CoreId);
 	}

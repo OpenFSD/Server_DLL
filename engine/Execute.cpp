@@ -11,7 +11,7 @@ namespace Server_Library
 
     Execute::Execute(
         Global* ptr_Global,
-        unsigned char number_Implemented_Cores
+        __int8 number_Implemented_Cores
     )
     {
         ptr_Execute_Control = NULL;
@@ -52,7 +52,7 @@ namespace Server_Library
     }
 
     void Execute::Initialise_Control(
-        unsigned char number_Implemented_Cores,
+        __int8 number_Implemented_Cores,
         Server_Library::Global* ptr_Global
     )
     {
@@ -62,14 +62,13 @@ namespace Server_Library
 
     void Execute::Initialise_Threads()
     {
-        for (unsigned char coreId = 0; coreId < Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores(); coreId++)
+        for (__int8 coreId = 0; coreId < Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores(); coreId++)
         {
             ptr_Thread_WithCoreId[coreId] = new std::thread(
-                Server_Library::Framework_Server::Get_HostServer()->Get_Algorithms()->Get_Concurren_Array(int(coreId))->Thread_Concurrency,
-                unsigned char(coreId),
+                Server_Library::Framework_Server::Get_HostServer()->Get_Algorithms()->Get_Concurren_Array(coreId)->Thread_Concurrency,
+                coreId,
                 Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores()
             );
-            while (ptr_Thread_WithCoreId[coreId] == NULL) { /* wait untill created */ }
         }
     }
 

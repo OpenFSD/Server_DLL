@@ -8,13 +8,13 @@ namespace Server_Library
     public:
         Global();
         ~Global();
-        unsigned char Get_NumCores();
-        unsigned char Get_NumPraiseEvetns();
+        __int8 Get_NumCores();
+        __int8 Get_NumPraiseEvetns();
 
     protected:
 
     private:
-        static unsigned char number_Implemented_Cores;
-        static unsigned char number_Praise_Events;
+        static __int8 number_Implemented_Cores;
+        static __int8 number_Praise_Events;
     };
 }

@@ -10,8 +10,8 @@ namespace ConcurrentQue
     public:
         ConcurrentQue_Server_Framework();
         virtual ~ConcurrentQue_Server_Framework();
-        static void Request_Wait_Launch_ConcurrentThread(unsigned char concurrent_CoreId);
-        static void Concurrent_Thread_End(unsigned char concurrent_CoreId);
+        static void Request_Wait_Launch_ConcurrentThread(__int8 concurrent_CoreId);
+        static void Concurrent_Thread_End(__int8 concurrent_CoreId);
 
         static void Create_ConcurrentQue();
         static class ConcurrentQue_Server_LaunchConcurrency* Get_LaunchConcurrency();

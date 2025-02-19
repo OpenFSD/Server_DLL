@@ -14,7 +14,7 @@ namespace Server_Library
     class Data
     {
     public:
-        Data(unsigned char number_Implemented_Cores);
+        Data(__int8 number_Implemented_Cores);
         virtual ~Data();
 
         __int8 BoolToInt(bool bufferSide);
@@ -26,10 +26,10 @@ namespace Server_Library
         class Data_Control* Get_Data_Control();
         class Input* GetBuffer_InputFrontDouble();
         class Input* GetBuffer_InputBackDouble();
-        class Input* Get_InputRefferenceOfCore(unsigned char concurrent_coreId);
+        class Input* Get_InputRefferenceOfCore(__int8 concurrent_coreId);
         class Output* GetBuffer_OututFrontDouble();
         class Output* GetBuffer_OutputBackDouble();
-        class Output* Get_OutputRefferenceOfCore(unsigned char concurrent_coreId);
+        class Output* Get_OutputRefferenceOfCore(__int8 concurrent_coreId);
         class Input* Get_New_InputBuffer();
         class Output* Get_New_OutputBuffer();
         bool GetState_InputBuffer();
@@ -39,8 +39,8 @@ namespace Server_Library
         class User_I* Get_User_I();
         class User_O* Get_User_O();
 
-        void Set_InputRefferenceOfCore(unsigned char concurrent_coreId, class Input* value_Input);
-        void Set_OutputRefferenceOfCore(unsigned char concurrent_coreId, class Output* value_Output);
+        void Set_InputRefferenceOfCore(__int8 concurrent_coreId, class Input* value_Input);
+        void Set_OutputRefferenceOfCore(__int8 concurrent_coreId, class Output* value_Output);
 
     protected:
 
@@ -50,9 +50,9 @@ namespace Server_Library
         static class Input* ptr_EmptyBuffer_Input;
         static class Output* ptr_EmptyBuffer_Output;
         static class Input* ptr_Buffer_InputDouble[2];
-        static class Input* ptr_Buffer_InputReference_ForCore[3];
+        static class Input* ptr_Buffer_InputReference_ForCore[4];//NUMBER OF CONCURRENT CORES
         static class Output* ptr_Buffer_OututDouble[2];
-        static class Output* ptr_Buffer_OutputReference_ForCore[3];
+        static class Output* ptr_Buffer_OutputReference_ForCore[4];//NUMBER OF CONCURRENT CORES
         static class Data_Control* ptr_Data_Control;
         static std::vector<class Input*>* ptr_Stack_InputPraise;
         static std::vector<class Output*>* ptr_Stack_OutputPraise;

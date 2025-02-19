@@ -9,10 +9,9 @@ namespace Server_Library
 
     Input::Input()
     {
+        ptr_Input_Control = NULL;
         ptr_Buffer_SubSet_InputPraise = NULL;
-        
         ptr_in_praiseEventId = __int16(0);
-        while (ptr_in_praiseEventId == NULL) { /* wait untill created */ }
     }
 
     Input::~Input()

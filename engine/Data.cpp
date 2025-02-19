@@ -1,5 +1,6 @@
 #include "Data.h"
 #include <cstddef>
+#include <iostream>
 
 namespace Server_Library
 {
@@ -8,9 +9,9 @@ namespace Server_Library
     class Input* Data::ptr_EmptyBuffer_Input = NULL;
     class Output* Data::ptr_EmptyBuffer_Output = NULL;
     class Input* Data::ptr_Buffer_InputDouble[2] = { NULL, NULL };
-    class Input* Data::ptr_Buffer_InputReference_ForCore[3] = { NULL, NULL, NULL };//NUMBER OF CONCURRENT CORES
+    class Input* Data::ptr_Buffer_InputReference_ForCore[4] = { NULL, NULL, NULL, NULL };//NUMBER OF CONCURRENT CORES
     class Output* Data::ptr_Buffer_OututDouble[2] = { NULL, NULL };
-    class Output* Data::ptr_Buffer_OutputReference_ForCore[3] = { NULL, NULL, NULL };//NUMBER OF CONCURRENT CORES
+    class Output* Data::ptr_Buffer_OutputReference_ForCore[4] = { NULL, NULL, NULL, NULL };//NUMBER OF CONCURRENT CORES
     class Data_Control* Data::ptr_Data_Control = NULL;
     std::vector<class Input*>* Data::ptr_Stack_InputPraise = NULL;
     std::vector<class Output*>* Data::ptr_Stack_OutputPraise = NULL;
@@ -22,7 +23,7 @@ namespace Server_Library
     bool Data::state_InBufferToWrite = true;
     bool Data::state_OutBufferToWrite = true;
 
-    Data::Data(unsigned char number_Implemented_Cores)
+    Data::Data(__int8 number_Implemented_Cores)
     {
        // ptr_GameInstance = new class Server_Library::Game();
        // while (ptr_GameInstance == NULL) { /* wait untill created */ }
@@ -45,19 +46,16 @@ namespace Server_Library
             ptr_Buffer_OututDouble[index] = new Output();
             while (ptr_Buffer_OututDouble[index] == NULL) { /* wait untill created */ }
         }
-        for (__int8 index = 0; index < (4 - 1); index++)//Number Of Cores
+        for (__int8 index = 0; index < Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores(); index++)//Number Of Cores
         {
             ptr_Buffer_InputReference_ForCore[index] = new Input();
             while (ptr_Buffer_InputReference_ForCore[index] == NULL) { /* wait untill created */ }
         }
-        for (__int8 index = 0; index < (Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores() - 1); index++)
+        for (__int8 index = 0; index < Server_Library::Framework_Server::Get_HostServer()->Get_Global()->Get_NumCores(); index++)
         {
             ptr_Buffer_OutputReference_ForCore[index] = new Output();
             while (ptr_Buffer_OutputReference_ForCore[index] == NULL) { /* wait untill created */ }
         }
-
-        ptr_Data_Control = new Data_Control();
-        while (ptr_User_I == NULL) { /* wait untill created */ }
 
         ptr_Stack_InputPraise = new std::vector<class Server_Library::Input*>;
         while (ptr_Stack_InputPraise == NULL) { /* wait untill created */ }
@@ -120,7 +118,7 @@ namespace Server_Library
 
     void Data::Initialise_Control()
     {
-        ptr_Data_Control = new Server_Library::Data_Control();
+        ptr_Data_Control = new Data_Control();
         while (ptr_Data_Control == NULL) { /* wait untill created */ }
     }
 
@@ -154,12 +152,12 @@ namespace Server_Library
         return ptr_Buffer_OututDouble[BoolToInt(!GetState_InputBuffer())];
     }
 
-    class Input* Data::Get_InputRefferenceOfCore(unsigned char concurrent_coreId)
+    class Input* Data::Get_InputRefferenceOfCore(__int8 concurrent_coreId)
     {
         return ptr_Buffer_InputReference_ForCore[concurrent_coreId];
     }
 
-    class Output* Data::Get_OutputRefferenceOfCore(unsigned char concurrent_coreId)
+    class Output* Data::Get_OutputRefferenceOfCore(__int8 concurrent_coreId)
     {
         return ptr_Buffer_OutputReference_ForCore[concurrent_coreId];
     }
@@ -204,12 +202,12 @@ namespace Server_Library
         return ptr_User_O;
     }
 
-    void Data::Set_InputRefferenceOfCore(unsigned char concurrent_coreId, class Server_Library::Input* value_Input)
+    void Data::Set_InputRefferenceOfCore(__int8 concurrent_coreId, class Server_Library::Input* value_Input)
     {
         ptr_Buffer_InputReference_ForCore[concurrent_coreId] = value_Input;
     }
 
-    void Data::Set_OutputRefferenceOfCore(unsigned char concurrent_coreId, class Server_Library::Output* value_Output)
+    void Data::Set_OutputRefferenceOfCore(__int8 concurrent_coreId, class Server_Library::Output* value_Output)
     {
         ptr_Buffer_OutputReference_ForCore[concurrent_coreId] = value_Output;
     }

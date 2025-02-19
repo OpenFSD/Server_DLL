@@ -3,20 +3,20 @@
 
 namespace WaitEnableWrite
 {
-    unsigned char WriteEnable_Control_Stack_Server_InputAction::coreId_For_WritePraise_Index = NULL;
+    __int8 WriteEnable_Control_Stack_Server_InputAction::coreId_For_WritePraise_Index = NULL;
     int WriteEnable_Control_Stack_Server_InputAction::ptr_count_CoreId_WriteActive[4] = { NULL, NULL, NULL, NULL };//NUMBER OF CORES
     int WriteEnable_Control_Stack_Server_InputAction::ptr_count_CoreId_WriteIdle[4] = { NULL, NULL, NULL, NULL };//NUMBER OF CORES
     int WriteEnable_Control_Stack_Server_InputAction::ptr_count_CoreId_WriteWait[4] = { NULL, NULL, NULL, NULL };//NUMBER OF CORES
     bool WriteEnable_Control_Stack_Server_InputAction::flag_WriteState[4][2] = { {NULL, NULL}, {NULL, NULL}, {NULL, NULL}, {NULL, NULL} };//NUMBER OF CORES
-    unsigned char WriteEnable_Control_Stack_Server_InputAction::ptr_new_coreId_For_WritePraise_Index = NULL;
+    __int8 WriteEnable_Control_Stack_Server_InputAction::ptr_new_coreId_For_WritePraise_Index = NULL;
     bool WriteEnable_Control_Stack_Server_InputAction::praisingWrite = NULL;
-    unsigned char WriteEnable_Control_Stack_Server_InputAction::ptr_que_CoreToWrite[4] = { NULL, NULL, NULL, NULL };//NUMBER OF CORES
+    __int8 WriteEnable_Control_Stack_Server_InputAction::ptr_que_CoreToWrite[4] = { NULL, NULL, NULL, NULL };//NUMBER OF CORES
 
     WriteEnable_Control_Stack_Server_InputAction::WriteEnable_Control_Stack_Server_InputAction(
         class WaitEnableWrite::Global_WriteEnable_Stack_Server_InputAction* ptr_Global
     )
     {
-        coreId_For_WritePraise_Index = unsigned char(0);
+        coreId_For_WritePraise_Index = __int8(0);
         int ptr_count_CoreId_WriteActive[4] = { int(0), int(0), int(0), int(0) };//NUMBER OF CORES
         int ptr_count_CoreId_WriteIdle[4] = { int(0), int(0), int(0), int(0) };//NUMBER OF CORES
         int ptr_count_CoreId_WriteWait[4] = { int(0), int(0), int(0), int(0) };//NUMBER OF CORES
@@ -29,10 +29,10 @@ namespace WaitEnableWrite
         flag_WriteState[2][1] = ptr_Global->GetConst_Write_IDLE(1);
         flag_WriteState[3][0] = ptr_Global->GetConst_Write_IDLE(0);
         flag_WriteState[3][1] = ptr_Global->GetConst_Write_IDLE(1);
-        unsigned char ptr_new_coreId_For_WritePraise_Index = unsigned char(1);
+        __int8 ptr_new_coreId_For_WritePraise_Index = __int8(1);
         bool praisingWrite = bool(false);
-        unsigned char ptr_que_CoreToWrite[4] = { unsigned char(0), unsigned char(1), unsigned char(2), unsigned char(3) };//NUMBER OF CORES
-        for (unsigned char index=0; index < ptr_Global->Get_NumCores(); index++)
+        __int8 ptr_que_CoreToWrite[4] = { __int8(0), __int8(1), __int8(2), __int8(3) };//NUMBER OF CORES
+        for (__int8 index=0; index < ptr_Global->Get_NumCores(); index++)
         {
             ptr_que_CoreToWrite[index] = index;
         }
@@ -44,11 +44,11 @@ namespace WaitEnableWrite
     }
 
     void WriteEnable_Control_Stack_Server_InputAction::WriteEnable_Activate(
-        unsigned char coreId,
+        __int8 coreId,
         class WaitEnableWrite::Global_WriteEnable_Stack_Server_InputAction* ptr_Global
     )
     {
-        for (unsigned char index = 0; index < ptr_Global->Get_NumCores(); index++)
+        for (__int8 index = 0; index < ptr_Global->Get_NumCores(); index++)
         {
             SetFlag_writeState(coreId, index, ptr_Global->GetConst_Write_WRITE(index));
         }
@@ -58,9 +58,9 @@ namespace WaitEnableWrite
         class WaitEnableWrite::Global_WriteEnable_Stack_Server_InputAction* ptr_Global
     )
     {
-        for (unsigned char index_A = 0; index_A < (ptr_Global->Get_NumCores() - 1); index_A++)
+        for (__int8 index_A = 0; index_A < (ptr_Global->Get_NumCores() - 1); index_A++)
         {
-            for (unsigned char index_B = (index_A + 1); index_B < ptr_Global->Get_NumCores(); index_B++)
+            for (__int8 index_B = (index_A + 1); index_B < ptr_Global->Get_NumCores(); index_B++)
             {
                 if (GetFlag_writeState(Get_que_CoreToWrite(index_A), 0) == ptr_Global->GetConst_Write_WRITE(0)
                     && GetFlag_writeState(Get_que_CoreToWrite(index_A), 1) == ptr_Global->GetConst_Write_WRITE(1))
@@ -115,7 +115,7 @@ namespace WaitEnableWrite
     }
 
     void WriteEnable_Control_Stack_Server_InputAction::WriteEnable_Request(
-        unsigned char coreId,
+        __int8 coreId,
         class WaitEnableWrite::Global_WriteEnable_Stack_Server_InputAction* ptr_Global
     )
     {
@@ -127,7 +127,7 @@ namespace WaitEnableWrite
         Set_coreIdForWritePraiseIndex(Get_new_coreIdForWritePraiseIndex());
         if (Get_coreIdForWritePraiseIndex() == coreId)
         {
-            for (unsigned char index = 0; index < 2; index++)
+            for (__int8 index = 0; index < 2; index++)
             {
                 SetFlag_writeState(coreId, index, ptr_Global->GetConst_Write_WAIT(index));
             }
@@ -151,7 +151,7 @@ namespace WaitEnableWrite
 
     void WriteEnable_Control_Stack_Server_InputAction::WriteQue_Update(class WaitEnableWrite::Global_WriteEnable_Stack_Server_InputAction* ptr_Global)
     {
-        for (unsigned char index = 0; index < ptr_Global->Get_NumCores(); index++)
+        for (__int8 index = 0; index < ptr_Global->Get_NumCores(); index++)
         {
             if (GetFlag_writeState(index, 0) == false)
             {
@@ -180,44 +180,44 @@ namespace WaitEnableWrite
         }
     }
 
-    unsigned char WriteEnable_Control_Stack_Server_InputAction::Get_coreIdForWritePraiseIndex()
+    __int8 WriteEnable_Control_Stack_Server_InputAction::Get_coreIdForWritePraiseIndex()
     {
         return coreId_For_WritePraise_Index;
     }
-    int WriteEnable_Control_Stack_Server_InputAction::Get_count_WriteActive(unsigned char coreId)
+    int WriteEnable_Control_Stack_Server_InputAction::Get_count_WriteActive(__int8 coreId)
     {
         return ptr_count_CoreId_WriteActive[coreId];
     }
-    int WriteEnable_Control_Stack_Server_InputAction::Get_count_WriteIdle(unsigned char coreId)
+    int WriteEnable_Control_Stack_Server_InputAction::Get_count_WriteIdle(__int8 coreId)
     {
         return ptr_count_CoreId_WriteIdle[coreId];
     }
-    int WriteEnable_Control_Stack_Server_InputAction::Get_count_WriteWait(unsigned char coreId)
+    int WriteEnable_Control_Stack_Server_InputAction::Get_count_WriteWait(__int8 coreId)
     {
         return ptr_count_CoreId_WriteWait[coreId];
     }
-    unsigned char WriteEnable_Control_Stack_Server_InputAction::GetFlag_CoreId_WriteEnable()
+    __int8 WriteEnable_Control_Stack_Server_InputAction::GetFlag_CoreId_WriteEnable()
     {
         return ptr_que_CoreToWrite[0];
     }
-    unsigned char WriteEnable_Control_Stack_Server_InputAction::Get_new_coreIdForWritePraiseIndex()
+    __int8 WriteEnable_Control_Stack_Server_InputAction::Get_new_coreIdForWritePraiseIndex()
     {
         return ptr_new_coreId_For_WritePraise_Index;
     }
-    unsigned char WriteEnable_Control_Stack_Server_InputAction::Get_que_CoreToWrite(unsigned char index)
+    __int8 WriteEnable_Control_Stack_Server_InputAction::Get_que_CoreToWrite(__int8 index)
     {
         return ptr_que_CoreToWrite[index];
     }
 
-    void WriteEnable_Control_Stack_Server_InputAction::Set_count_WriteActive(unsigned char coreId, int value)
+    void WriteEnable_Control_Stack_Server_InputAction::Set_count_WriteActive(__int8 coreId, int value)
     {
         ptr_count_CoreId_WriteActive[coreId] = value;
     }
-    void WriteEnable_Control_Stack_Server_InputAction::Set_count_WriteIdle(unsigned char coreId, int value)
+    void WriteEnable_Control_Stack_Server_InputAction::Set_count_WriteIdle(__int8 coreId, int value)
     {
         ptr_count_CoreId_WriteIdle[coreId] = value;
     }
-    void WriteEnable_Control_Stack_Server_InputAction::Set_count_WriteWait(unsigned char coreId, int value)
+    void WriteEnable_Control_Stack_Server_InputAction::Set_count_WriteWait(__int8 coreId, int value)
     {
         ptr_count_CoreId_WriteWait[coreId] = value;
     }
@@ -225,21 +225,21 @@ namespace WaitEnableWrite
     {
         praisingWrite = value;
     }
-    void WriteEnable_Control_Stack_Server_InputAction::SetFlag_writeState(unsigned char coreId, unsigned char index, bool value)
+    void WriteEnable_Control_Stack_Server_InputAction::SetFlag_writeState(__int8 coreId, __int8 index, bool value)
     {
         flag_WriteState[coreId][index] = value;
     }
-    void WriteEnable_Control_Stack_Server_InputAction::Set_new_coreIdForWritePraiseIndex(unsigned char value)
+    void WriteEnable_Control_Stack_Server_InputAction::Set_new_coreIdForWritePraiseIndex(__int8 value)
     {
         ptr_new_coreId_For_WritePraise_Index = value;
     }
-    void WriteEnable_Control_Stack_Server_InputAction::Set_que_CoreToWrite(unsigned char index, unsigned char value)
+    void WriteEnable_Control_Stack_Server_InputAction::Set_que_CoreToWrite(__int8 index, __int8 value)
     {
         ptr_que_CoreToWrite[index] = value;
     }
 
     void WriteEnable_Control_Stack_Server_InputAction::DynamicStagger(
-        unsigned char coreId
+        __int8 coreId
     )
     {
         if (Get_coreIdForWritePraiseIndex() == coreId)
@@ -257,8 +257,8 @@ namespace WaitEnableWrite
     }
 
     void WriteEnable_Control_Stack_Server_InputAction::WriteEnable_ShiftQueValues(
-        unsigned char coreId_A,
-        unsigned char coreId_B
+        __int8 coreId_A,
+        __int8 coreId_B
     )
     {
         int temp_A = int(0);
@@ -274,7 +274,7 @@ namespace WaitEnableWrite
         Set_count_WriteWait(coreId_A, Get_count_WriteWait(coreId_B));
         Set_count_WriteWait(coreId_B, temp_A);
 
-        unsigned char temp_B = unsigned char(0);
+        __int8 temp_B = __int8(0);
         temp_B = Get_que_CoreToWrite(coreId_A);
         Set_que_CoreToWrite(coreId_A, Get_que_CoreToWrite(coreId_B));
         Set_que_CoreToWrite(coreId_B, temp_B);
@@ -285,12 +285,12 @@ namespace WaitEnableWrite
         return praisingWrite;
     }
 
-    bool WriteEnable_Control_Stack_Server_InputAction::GetFlag_writeState(unsigned char coreId, unsigned char index)
+    bool WriteEnable_Control_Stack_Server_InputAction::GetFlag_writeState(__int8 coreId, __int8 index)
     {
         return flag_WriteState[coreId][index];
     }
 
-    void WriteEnable_Control_Stack_Server_InputAction::Set_coreIdForWritePraiseIndex(unsigned char value)
+    void WriteEnable_Control_Stack_Server_InputAction::Set_coreIdForWritePraiseIndex(__int8 value)
     {
         coreId_For_WritePraise_Index = value;
     }

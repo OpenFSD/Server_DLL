@@ -8,10 +8,10 @@ namespace WaitEnableWrite
     public:
         Global_WriteEnable_Stack_Server_InputAction();
         ~Global_WriteEnable_Stack_Server_InputAction();
-        unsigned char Get_NumCores();
-        bool GetConst_Write_IDLE(unsigned char index);
-        bool GetConst_Write_WAIT(unsigned char index);
-        bool GetConst_Write_WRITE(unsigned char index);
+        __int8 Get_NumCores();
+        bool GetConst_Write_IDLE(__int8 index);
+        bool GetConst_Write_WAIT(__int8 index);
+        bool GetConst_Write_WRITE(__int8 index);
 
     protected:
 
@@ -19,6 +19,6 @@ namespace WaitEnableWrite
         static bool flag_write_IDLE[2];
         static bool flag_write_WAIT[2];
         static bool flag_write_WRITE[2];
-        static unsigned char ptr_num_Implemented_Cores;
+        static __int8 ptr_num_Implemented_Cores;
     };
 }

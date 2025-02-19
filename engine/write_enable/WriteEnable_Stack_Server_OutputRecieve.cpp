@@ -27,11 +27,11 @@ namespace WaitEnableWrite
         while (ptr_WriteEnable_Control == NULL) { /* wait untill created */ }
     }
 
-    void WriteEnable_Stack_Server_OutputRecieve::Write_End(unsigned char coreId)
+    void WriteEnable_Stack_Server_OutputRecieve::Write_End(__int8 coreId)
     {
         class WaitEnableWrite::WriteEnable_Stack_Server_OutputRecieve_Control* ptr_WriteEnable_Control = WaitEnableWrite::WriteEnable_Stack_Server_OutputRecieve_Framework::Get_WriteEnable()->Get_WriteEnable_Control();
         class WaitEnableWrite::WriteEnable_Stack_Server_OutputRecieve_Global* ptr_Global = WaitEnableWrite::WriteEnable_Stack_Server_OutputRecieve_Framework::Get_WriteEnable()->Get_GlobalForWriteControl();
-        for (unsigned char index = 0; index < 2; index++)
+        for (__int8 index = 0; index < 2; index++)
         {
             ptr_WriteEnable_Control->SetFlag_writeState(coreId, index, ptr_Global->GetConst_Write_IDLE(index));
         }
@@ -48,7 +48,7 @@ namespace WaitEnableWrite
         );
         ptr_WriteEnable_Control->SetFlag_readWrite_Open(false);
     }
-    void WriteEnable_Stack_Server_OutputRecieve::Write_Start(unsigned char coreId)
+    void WriteEnable_Stack_Server_OutputRecieve::Write_Start(__int8 coreId)
     {
         ptr_WriteEnable_Control->WriteEnable_Request(
             coreId,

@@ -26,13 +26,24 @@ namespace Server_Library
         while (ptr_Concurrent_Control == NULL) { /* wait untill class constructed */ }
     }
 
-    void Concurrent::Thread_Concurrency(__int8 concurrent_coreId, unsigned char number_Implemented_Cores)
+    void Concurrent::Thread_Concurrency(__int8 concurrent_coreId, __int8 number_Implemented_Cores)
     {
+        bool doneOnce = true;
+        while (Server_Library::Framework_Server::Get_HostServer()->Get_Execute()->Get_Execute_Control()->GetFlag_ThreadInitialised(concurrent_coreId) == true)
+        {
+            if (doneOnce == true)
+            {
+                Server_Library::Framework_Server::Get_HostServer()->Get_Execute()->Get_Execute_Control()->SetConditionCodeOfThisThreadedCore(concurrent_coreId);
+                doneOnce = false;
+            }
+
+        }
+        std::cout << "Thread Initialised => Thread_Concurrency()" << std::endl;//TestBench
         while (Server_Library::Framework_Server::Get_HostServer()->Get_Execute()->Get_Execute_Control()->GetFlag_SystemInitialised() == true)
         {
-            Server_Library::Framework_Server::Get_HostServer()->Get_Execute()->Get_Execute_Control()->SetConditionCodeOfThisThreadedCore(concurrent_coreId);
+
         }
-        std::cout << "TestBench: Concurrent Thread Stating.";//TestBench
+        std::cout << "Thread Starting => Thread_Concurrency()" << std::endl;//TestBench
         while (Server_Library::Framework_Server::Get_HostServer()->Get_Execute()->Get_Execute_Control()->GetFlag_SystemInitialised() == false)
         {
             if (Server_Library::Framework_Server::Get_HostServer()->Get_Execute()->Get_LaunchConcurrency_ServerSide()->Get_LaunchConcurrency()->Get_Control_Of_LaunchConcurrency()->Get_State_ConcurrentCore(concurrent_coreId)

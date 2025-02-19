@@ -8,8 +8,8 @@ namespace Server_Library
     public:
         Output_Control();
         virtual ~Output_Control();
-        void LoadValuesInToInputSubset(unsigned char concurrent_CoreId, int* praiseEventId);
-        void SelectSetOutputSubset(int* ptr_praiseEventId, unsigned char concurrent_coreId);
+        void LoadValuesInToInputSubset(__int8 concurrent_CoreId, int* praiseEventId);
+        void SelectSetOutputSubset(int* ptr_praiseEventId, __int8 concurrent_coreId);
 
     protected:
 

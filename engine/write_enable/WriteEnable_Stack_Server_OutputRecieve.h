@@ -13,8 +13,8 @@ namespace WaitEnableWrite
         void Initialise_Control(
             class WriteEnable_Stack_Server_OutputRecieve_Global* ptr_Global
         );
-        void Write_End(unsigned char coreId);
-        void Write_Start(unsigned char coreId);
+        void Write_End(__int8 coreId);
+        void Write_Start(__int8 coreId);
 
         class WriteEnable_Stack_Server_OutputRecieve_Control* Get_WriteEnable_Control();
         class WriteEnable_Stack_Server_OutputRecieve_Global* Get_GlobalForWriteControl();

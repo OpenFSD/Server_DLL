@@ -4,8 +4,7 @@
 namespace Server_Library
 {
     class Concurrent** Algorithms::ptr_Concurrent_Array = NULL;
-    class Concurrent* Algorithms::ptr_Concurrent[3] = { NULL, NULL, NULL };//NUMBER OF CONCURRENT CORES
-    class ListenRespond* Algorithms::ptr_ListenRespond = NULL;
+    class Concurrent* Algorithms::ptr_Concurrent[4] = { NULL, NULL, NULL, NULL };//NUMBER OF CONCURRENT CORES
     class Concurrent* Algorithms::ptr_New_Concurrent = NULL;
     class User_Alg* Algorithms::ptr_User_Algorithms = NULL;
 
@@ -17,7 +16,7 @@ namespace Server_Library
 
     Algorithms::~Algorithms()
     {
-        for (int index = 0; index < 3; index++)//NUMBER OF CONCURRENT CORES
+        for (__int8 index = 0; index < 4; index++)//NUMBER OF CONCURRENT CORES
         {
             delete ptr_Concurrent[index];
         }
@@ -26,14 +25,9 @@ namespace Server_Library
         delete ptr_User_Algorithms;;
     }
 
-    Concurrent* Algorithms::Get_Concurren_Array(int concurrent_coreId)
+    Concurrent* Algorithms::Get_Concurren_Array(__int8 concurrent_coreId)
     {
         return ptr_Concurrent[concurrent_coreId];
-    }
-
-    ListenRespond* Algorithms::Get_ListenRespond()
-    {
-        return ptr_ListenRespond;
     }
 
     User_Alg* Algorithms::Get_User_Algorithms()
@@ -42,13 +36,13 @@ namespace Server_Library
     }
 
 
-    void Algorithms::Initialise(unsigned char number_Implemented_Cores)
+    void Algorithms::Initialise(__int8 number_Implemented_Cores)
     {
         ptr_New_Concurrent = new class Server_Library::Concurrent();
         while(ptr_New_Concurrent == NULL) { /* wait untill created */ }
         ptr_New_Concurrent->Initialise_Control();
 
-        for (unsigned char index = 0; index < (number_Implemented_Cores - 1); index++)
+        for (__int8 index = 0; index < (number_Implemented_Cores - 1); index++)
         {
             ptr_Concurrent[index] = ptr_New_Concurrent;
         }

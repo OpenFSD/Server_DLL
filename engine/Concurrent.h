@@ -23,7 +23,7 @@ namespace Server_Library
         void Initialise_Control();
         static void Thread_Concurrency(
             __int8 concurrent_coreId,
-            unsigned char number_Implemented_Cores
+            __int8 number_Implemented_Cores
         );
         void Do_Concurrent_Algorithm_For_PraiseEventId(
             __int16 ptr_praiseEventId,

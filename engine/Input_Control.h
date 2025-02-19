@@ -12,7 +12,7 @@ namespace Server_Library
         Input_Control();
         virtual ~Input_Control();
         
-        void LoadValuesInToInputSubset(unsigned char concurrent_CoreId, int* praiseEventId);
+        void LoadValuesInToInputSubset(__int8 concurrent_CoreId, int* praiseEventId);
         void SelectSetInputSubset(int* ptr_praiseEventId);
 
     protected:

@@ -12,8 +12,8 @@ namespace WaitEnableWrite
         virtual ~WriteEnable_Stack_Server_OutputRecieve_Framework();
 
         static void Create_WriteEnable();
-        static void Write_End(unsigned char coreId);
-        static void Write_Start(unsigned char coreId);
+        static void Write_End(__int8 coreId);
+        static void Write_Start(__int8 coreId);
 
         static class WriteEnable_Stack_Server_OutputRecieve* Get_WriteEnable();
 

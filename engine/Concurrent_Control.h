@@ -11,7 +11,7 @@ namespace Server_Library
         virtual ~Concurrent_Control();
         void SelectSet_Algorithm_Subset_For_Given_PraiseEventId(
             __int16 ptr_praiseEventId,
-            unsigned char concurrent_coreId
+            __int8 concurrent_coreId
         );
 
     protected:

@@ -11,14 +11,14 @@ namespace Server_Library
 
 	}
 
-	void Output_Control::LoadValuesInToInputSubset(unsigned char concurrent_CoreId, int* praiseEventId)
+	void Output_Control::LoadValuesInToInputSubset(__int8 concurrent_CoreId, int* praiseEventId)
 	{
 
 	}
 
 	void Output_Control::SelectSetOutputSubset(
 		int* ptr_praiseEventId,
-		unsigned char concurrent_coreId
+		__int8 concurrent_coreId
 	)
 	{
 		switch (*ptr_praiseEventId)

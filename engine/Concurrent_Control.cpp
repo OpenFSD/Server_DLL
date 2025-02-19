@@ -14,7 +14,7 @@ namespace Server_Library
 
 	void Concurrent_Control::SelectSet_Algorithm_Subset_For_Given_PraiseEventId(
 		__int16 ptr_praiseEventId,
-		unsigned char concurrent_coreId
+		__int8 concurrent_coreId
 	)
 	{
 		switch (ptr_praiseEventId)

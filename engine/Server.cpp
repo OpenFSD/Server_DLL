@@ -1,5 +1,6 @@
 #include "Server.h"
 #include <cstddef>
+#include <iostream>
 
 namespace Server_Library
 {
@@ -12,17 +13,21 @@ namespace Server_Library
     {
         ptr_Global = new class Server_Library::Global();
         while (ptr_Global == NULL) { /* wait untill created */ }
+        std::cout << "Created => Server_Library::Global()" << std::endl;
 
         ptr_Algorithms = new class Server_Library::Algorithms();
         while (ptr_Algorithms == NULL) { /* wait untill created */ }
+        std::cout << "Created => Server_Library::Algorithms()" << std::endl;
 
         ptr_Data = new class Server_Library::Data(ptr_Global->Get_NumCores());
         while (ptr_Data == NULL) { /* wait untill created */ }
         ptr_Data->Initialise_Control();
+        std::cout << "Created => Server_Library::Data()" << std::endl;
 
         ptr_Execute = new class Server_Library::Execute(ptr_Global, ptr_Global->Get_NumCores());
         while (ptr_Execute == NULL) { /* wait untill created */ }
         ptr_Execute->Initialise_Control(Get_Global()->Get_NumCores(), ptr_Global);
+        std::cout << "Created => Server_Library::Execute" << std::endl;
     }
 
     Server::~Server()

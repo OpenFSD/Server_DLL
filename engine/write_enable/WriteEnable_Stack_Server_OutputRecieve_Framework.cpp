@@ -21,12 +21,12 @@ namespace WaitEnableWrite
 		while (ptr_WriteEnable == NULL) { /* wait untill created */ }
 	}
 
-	void WriteEnable_Stack_Server_OutputRecieve_Framework::Write_End(unsigned char coreId)
+	void WriteEnable_Stack_Server_OutputRecieve_Framework::Write_End(__int8 coreId)
 	{
 		ptr_WriteEnable->Write_End(coreId);
 	}
 
-	void WriteEnable_Stack_Server_OutputRecieve_Framework::Write_Start(unsigned char coreId)
+	void WriteEnable_Stack_Server_OutputRecieve_Framework::Write_Start(__int8 coreId)
 	{
 		ptr_WriteEnable->Write_Start(coreId);
 	}

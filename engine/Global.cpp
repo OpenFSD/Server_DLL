@@ -3,13 +3,13 @@
 
 namespace Server_Library
 {
-    unsigned char Global::number_Implemented_Cores = NULL;
-    unsigned char Global::number_Praise_Events = NULL;
+    __int8 Global::number_Implemented_Cores = NULL;
+    __int8 Global::number_Praise_Events = NULL;
 
     Global::Global()
     {
-        number_Implemented_Cores = unsigned char(4);//NUMBER OF CORES
-        number_Praise_Events = unsigned char(2);
+        number_Implemented_Cores = __int8(4);//NUMBER OF CORES
+        number_Praise_Events = __int8(2);
     }
 
     Global::~Global()
@@ -17,11 +17,11 @@ namespace Server_Library
         
     }
 
-    unsigned char Global::Get_NumCores()
+    __int8 Global::Get_NumCores()
     {
         return number_Implemented_Cores;
     }
-    unsigned char Global::Get_NumPraiseEvetns()
+    __int8 Global::Get_NumPraiseEvetns()
     {
         return number_Praise_Events;
     }

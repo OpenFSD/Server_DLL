@@ -29,7 +29,7 @@ namespace Server_Library
         static void Pop_Stack_Output();
 
         static class Server* Get_HostServer();
-        static unsigned char Get_NumberOfCores();
+        static __int8 Get_NumberOfCores();
         static class WaitEnableWrite::WriteEnable_Stack_Server_InputAction_Framework* Get_WriteEnable_Stack_InputPraise();
         static class WaitEnableWrite::WriteEnable_Stack_Server_OutputRecieve_Framework* Get_WriteEnable_Stack_OutputPraise();
 

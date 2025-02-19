@@ -13,7 +13,7 @@ namespace Server_Library
 
 	}
 
-    void Input_Control::LoadValuesInToInputSubset(unsigned char concurrent_CoreId, int* praiseEventId)
+    void Input_Control::LoadValuesInToInputSubset(__int8 concurrent_CoreId, int* praiseEventId)
     {
         switch (*praiseEventId)
         {

@@ -6,34 +6,34 @@ namespace ConcurrentQue
 {
     bool ConcurrentQue_Server_LaunchConcurrency_Control::state_ConcurrentCore[3] = { NULL, NULL, NULL };//NUMBER OF CONCURRENT CORES
     bool ConcurrentQue_Server_LaunchConcurrency_Control::flag_praisingLaunch = NULL;
-    unsigned char ConcurrentQue_Server_LaunchConcurrency_Control::concurrent_CoreId_Index = NULL;
+    __int8 ConcurrentQue_Server_LaunchConcurrency_Control::concurrent_CoreId_Index = NULL;
     int ConcurrentQue_Server_LaunchConcurrency_Control::count_LaunchActive_For[3] = { NULL, NULL, NULL };//NUMBER OF CONCURNT CORES
     int ConcurrentQue_Server_LaunchConcurrency_Control::count_LaunchIdle_For[3] = { NULL, NULL, NULL };//NUMBER OF CONCURNT CORES
-    unsigned char ConcurrentQue_Server_LaunchConcurrency_Control::new_concurrent_CoreId_Index = NULL;
-    unsigned char ConcurrentQue_Server_LaunchConcurrency_Control::que_CoreToLaunch[3] = { NULL, NULL, NULL };//NUMBER OF CONCURRENT CORES
+    __int8 ConcurrentQue_Server_LaunchConcurrency_Control::new_concurrent_CoreId_Index = NULL;
+    __int8 ConcurrentQue_Server_LaunchConcurrency_Control::que_CoreToLaunch[3] = { NULL, NULL, NULL };//NUMBER OF CONCURRENT CORES
     
-    std::vector<unsigned char>* ConcurrentQue_Server_LaunchConcurrency_Control::stack_PriseEventId;
+    std::vector<__int8>* ConcurrentQue_Server_LaunchConcurrency_Control::stack_PriseEventId;
 
     ConcurrentQue_Server_LaunchConcurrency_Control::ConcurrentQue_Server_LaunchConcurrency_Control(
         ConcurrentQue::ConcurrentQue_Server_Global* ptr_Global,
-        unsigned char number_Implemented_Cores
+        __int8 number_Implemented_Cores
     )
     {
         bool state_ConcurrentCore[3] = { bool(false), bool(false), bool(false) };//NUMBER OF CONCURRENT CORES
         flag_praisingLaunch = bool(false);
-        concurrent_CoreId_Index = unsigned char(0);
+        concurrent_CoreId_Index = __int8(0);
         int count_LaunchActive_For[3] = { int(0), int(0), int(0) };//NUMBER OF CONCURNT CORES
         int count_LaunchIdle_For[3] = { int(0), int(0), int(0) };//NUMBER OF CONCURNT CORES
-        new_concurrent_CoreId_Index = unsigned char(0);
-        unsigned char que_CoreToLaunch[3] = { unsigned char(0), unsigned char(0), unsigned char(0) };//NUMBER OF CONCURNT CORES
-        for (unsigned char index = 0; index < (number_Implemented_Cores-1); index++)
+        new_concurrent_CoreId_Index = __int8(0);
+        __int8 que_CoreToLaunch[3] = { __int8(0), __int8(0), __int8(0) };//NUMBER OF CONCURNT CORES
+        for (__int8 index = 0; index < (number_Implemented_Cores-1); index++)
         {
             state_ConcurrentCore[index] = ptr_Global->GetConst_Core_IDLE();
             count_LaunchActive_For[index] = int(0);
             count_LaunchIdle_For[index] = int(0);
             que_CoreToLaunch[index] = index;
         }
-        std::vector<unsigned char>* stack_PriseEventId = new std::vector<unsigned char>;
+        std::vector<__int8>* stack_PriseEventId = new std::vector<__int8>;
     }
 
     ConcurrentQue_Server_LaunchConcurrency_Control::~ConcurrentQue_Server_LaunchConcurrency_Control()
@@ -49,7 +49,7 @@ namespace ConcurrentQue
     }
 
     void ConcurrentQue_Server_LaunchConcurrency_Control::LaunchEnable_Request(
-        unsigned char concurrent_CoreId,
+        __int8 concurrent_CoreId,
         class ConcurrentQue::ConcurrentQue_Server_Global* ptr_Global
     )
     {
@@ -84,12 +84,12 @@ namespace ConcurrentQue
 
     void ConcurrentQue_Server_LaunchConcurrency_Control::LaunchEnable_SortQue(
         class ConcurrentQue::ConcurrentQue_Server_Global* ptr_Global,
-        unsigned char number_Implemented_Cores
+        __int8 number_Implemented_Cores
     )
     {
-        for (unsigned char index_A = 0; index_A < number_Implemented_Cores - 2; index_A++)
+        for (__int8 index_A = 0; index_A < number_Implemented_Cores - 2; index_A++)
         {
-            for (unsigned char index_B = index_A + 1; index_B < number_Implemented_Cores - 1; index_B++)
+            for (__int8 index_B = index_A + 1; index_B < number_Implemented_Cores - 1; index_B++)
             {
                 if (Get_State_ConcurrentCore(Get_que_CoreToLaunch(index_A)) == ptr_Global->GetConst_Core_ACTIVE())
                 {
@@ -119,10 +119,10 @@ namespace ConcurrentQue
     }
 
     void ConcurrentQue_Server_LaunchConcurrency_Control::LaunchQue_Update(
-        unsigned char number_Implemented_Cores
+        __int8 number_Implemented_Cores
     )
     {
-        for (unsigned char index = 0; index < number_Implemented_Cores; index++)
+        for (__int8 index = 0; index < number_Implemented_Cores; index++)
         {
             switch (Get_State_ConcurrentCore(index))
             {
@@ -142,17 +142,17 @@ namespace ConcurrentQue
         }
     }
 
-    unsigned char ConcurrentQue_Server_LaunchConcurrency_Control::Get_concurrent_CoreId_Index()
+    __int8 ConcurrentQue_Server_LaunchConcurrency_Control::Get_concurrent_CoreId_Index()
     {
         return concurrent_CoreId_Index;
     }
 
-    unsigned char ConcurrentQue_Server_LaunchConcurrency_Control::Get_coreId_To_Launch()
+    __int8 ConcurrentQue_Server_LaunchConcurrency_Control::Get_coreId_To_Launch()
     {
         return que_CoreToLaunch[0];
     }
 
-    bool ConcurrentQue_Server_LaunchConcurrency_Control::Get_State_ConcurrentCore(unsigned char concurrent_CoreId)
+    bool ConcurrentQue_Server_LaunchConcurrency_Control::Get_State_ConcurrentCore(__int8 concurrent_CoreId)
     {
         return state_ConcurrentCore[concurrent_CoreId];
     }
@@ -162,22 +162,22 @@ namespace ConcurrentQue
         flag_praisingLaunch = value;
     }
 
-    unsigned char ConcurrentQue_Server_LaunchConcurrency_Control::Get_new_concurrent_CoreId_Index()
+    __int8 ConcurrentQue_Server_LaunchConcurrency_Control::Get_new_concurrent_CoreId_Index()
     {
         return new_concurrent_CoreId_Index;
     }
 
-    std::vector<unsigned char>* ConcurrentQue_Server_LaunchConcurrency_Control::Get_Stack_PriseEventId()
+    std::vector<__int8>* ConcurrentQue_Server_LaunchConcurrency_Control::Get_Stack_PriseEventId()
     {
         return stack_PriseEventId;
     }
 
-    void ConcurrentQue_Server_LaunchConcurrency_Control::Set_concurrent_CoreId_Index(unsigned char value)
+    void ConcurrentQue_Server_LaunchConcurrency_Control::Set_concurrent_CoreId_Index(__int8 value)
     {
         concurrent_CoreId_Index = value;
     }
 
-    void ConcurrentQue_Server_LaunchConcurrency_Control::SetFlag_ConcurrentCoreState(unsigned char concurrent_CoreId, bool value)
+    void ConcurrentQue_Server_LaunchConcurrency_Control::SetFlag_ConcurrentCoreState(__int8 concurrent_CoreId, bool value)
     {
         state_ConcurrentCore[concurrent_CoreId] = value;
     }
@@ -188,13 +188,13 @@ namespace ConcurrentQue
         return flag_praisingLaunch;
     }
 
-    void ConcurrentQue_Server_LaunchConcurrency_Control::Set_new_concurrent_CoreId_Index(unsigned char value)
+    void ConcurrentQue_Server_LaunchConcurrency_Control::Set_new_concurrent_CoreId_Index(__int8 value)
     {
         new_concurrent_CoreId_Index = value;
     }
 
     void ConcurrentQue_Server_LaunchConcurrency_Control::DynamicStagger(
-        unsigned char ptr_coreId
+        __int8 ptr_coreId
     )
     {
         if (Get_concurrent_CoreId_Index() == ptr_coreId)
@@ -213,8 +213,8 @@ namespace ConcurrentQue
     }
 
     void ConcurrentQue_Server_LaunchConcurrency_Control::LaunchEnable_ShiftQueValues(
-        unsigned char concurrent_CoreId_A,
-        unsigned char concurrent_CoreId_B
+        __int8 concurrent_CoreId_A,
+        __int8 concurrent_CoreId_B
     )
     {
         int temp_Int;// = new int(0);
@@ -226,43 +226,43 @@ namespace ConcurrentQue
         Set_count_LaunchIdle_For(concurrent_CoreId_A, Get_count_LaunchIdle_For(concurrent_CoreId_B));
         Set_count_LaunchIdle_For(concurrent_CoreId_B, temp_Int);
 
-        unsigned char temp_UnnsignedChar;// = new unsigned char(0);
+        __int8 temp_UnnsignedChar;// = new __int8(0);
         temp_UnnsignedChar = Get_que_CoreToLaunch(concurrent_CoreId_A);
         Set_que_CoreToLaunch(concurrent_CoreId_A, Get_que_CoreToLaunch(concurrent_CoreId_B));
         Set_que_CoreToLaunch(concurrent_CoreId_B, temp_UnnsignedChar);
     }
 
-    int ConcurrentQue_Server_LaunchConcurrency_Control::Get_count_LaunchActive_For(unsigned char concurrent_CoreId)
+    int ConcurrentQue_Server_LaunchConcurrency_Control::Get_count_LaunchActive_For(__int8 concurrent_CoreId)
     {
         return count_LaunchActive_For[concurrent_CoreId];
     }
 
-    int ConcurrentQue_Server_LaunchConcurrency_Control::Get_count_LaunchIdle_For(unsigned char concurrent_CoreId)
+    int ConcurrentQue_Server_LaunchConcurrency_Control::Get_count_LaunchIdle_For(__int8 concurrent_CoreId)
     {
         return count_LaunchIdle_For[concurrent_CoreId];
     }
 
-    unsigned char ConcurrentQue_Server_LaunchConcurrency_Control::GetFlag_CoreId_Of_CoreToLaunch()
+    __int8 ConcurrentQue_Server_LaunchConcurrency_Control::GetFlag_CoreId_Of_CoreToLaunch()
     {
         return que_CoreToLaunch[0];
     }
 
-    unsigned char ConcurrentQue_Server_LaunchConcurrency_Control::Get_que_CoreToLaunch(unsigned char index)
+    __int8 ConcurrentQue_Server_LaunchConcurrency_Control::Get_que_CoreToLaunch(__int8 index)
     {
         return que_CoreToLaunch[index];
     }
 
-    void ConcurrentQue_Server_LaunchConcurrency_Control::Set_count_LaunchActive_For(unsigned char concurrent_CoreId, int value)
+    void ConcurrentQue_Server_LaunchConcurrency_Control::Set_count_LaunchActive_For(__int8 concurrent_CoreId, int value)
     {
         count_LaunchActive_For[concurrent_CoreId] = value;
     }
 
-    void ConcurrentQue_Server_LaunchConcurrency_Control::Set_count_LaunchIdle_For(unsigned char concurrent_CoreId, int value)
+    void ConcurrentQue_Server_LaunchConcurrency_Control::Set_count_LaunchIdle_For(__int8 concurrent_CoreId, int value)
     {
         count_LaunchIdle_For[concurrent_CoreId] = value;
     }
 
-    void ConcurrentQue_Server_LaunchConcurrency_Control::Set_que_CoreToLaunch(unsigned char concurrent_CoreId, unsigned char value)
+    void ConcurrentQue_Server_LaunchConcurrency_Control::Set_que_CoreToLaunch(__int8 concurrent_CoreId, __int8 value)
     {
         que_CoreToLaunch[concurrent_CoreId] = value;
     }
